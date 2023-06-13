@@ -1,6 +1,7 @@
 # study-moveit
-
-![Alt text](image.png)
+<p align = "center">
+    <img src="assets/rviz_gazebo_icub.png"/>
+</p>
 
 ## Overview
 
