@@ -1,0 +1,9 @@
+<library path="icub_controller">
+    <class name="icub_controller/ICubController"
+            type="icub_controller::ICubController"
+            base_class_type="hardware_interface::SystemInterface">
+        <description>
+            First ros2 controller for iCub
+        </description>
+    </class>
+</library>

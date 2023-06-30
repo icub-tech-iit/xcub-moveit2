@@ -16,7 +16,7 @@ def main(args=None):
     assert os.path.exists(urdf)
 
     req = SpawnEntity.Request()
-    req.name = "icub"
+    req.name = "iCub"
     req.xml = open(urdf, 'r').read()
     req.robot_namespace = ""
     req.reference_frame = "world"

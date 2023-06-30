@@ -12,7 +12,10 @@ find_package(rclcpp REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(gazebo_msgs REQUIRED)
 find_package(moveit_visual_tools REQUIRED)
-find_package(icub_moveit_config REQUIRED)
+find_package(controller_manager REQUIRED)
+find_package(rclcpp_lifecycle REQUIRED)
+find_package(hardware_interface REQUIRED)
+find_package(yarp_control_msgs REQUIRED)
 
 add_executable(icub_moveit src/icub_moveit.cpp launch/spawn_icub.py)
 target_include_directories(icub_moveit PUBLIC
@@ -25,7 +28,10 @@ ament_target_dependencies(
   "rclcpp"
   "rclpy"
   "moveit_visual_tools"
-  "icub_moveit_config"
+  "controller_manager"
+  "yarp_control_msgs"
+  "rclcpp_lifecycle"
+  "hardware_interface"
 )
 
 install(TARGETS icub_moveit DESTINATION lib/${PROJECT_NAME})
