@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 import rclpy
+import xacro
 from rclpy.node import Node
 from gazebo_msgs.srv import SpawnEntity
 from ament_index_python.packages import get_package_share_directory
@@ -11,13 +12,14 @@ def main(args=None):
     node = rclpy.create_node('spawn_entity')
     cli = node.create_client(SpawnEntity, '/spawn_entity')
 
-    urdfName = 'iCub_robot'
-    urdf = os.path.join(get_package_share_directory('icub_moveit_config'), 'config', urdfName + '.urdf')
-    assert os.path.exists(urdf)
+    xacro_file = os.path.join(get_package_share_directory('icub_moveit_config'), 'config', 'iCub.urdf.xacro')
+    assert os.path.exists(xacro_file)
+    robot_desc = xacro.process_file(xacro_file)
+    robot_model = robot_desc.toprettyxml()
 
     req = SpawnEntity.Request()
     req.name = "iCub"
-    req.xml = open(urdf, 'r').read()
+    req.xml = robot_model
     req.robot_namespace = ""
     req.reference_frame = "world"
 

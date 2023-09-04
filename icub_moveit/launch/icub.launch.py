@@ -36,19 +36,15 @@ def generate_launch_description():
     moveit_config = (
         MoveItConfigsBuilder("icub")
         .robot_description(file_path="config/iCub.urdf.xacro")
+        .robot_description_kinematics(file_path="config/kinematics.yaml")
         .to_moveit_configs()
     )
-    model_spawner = Node(package='icub_moveit', executable='spawn_icub.py', name='spawn_entity', output='screen', 
-            parameters=[moveit_config.robot_description]
-    )
 
-    static_tf = Node(
-        package="tf2_ros",
-        executable="static_transform_publisher",
-        name="static_transform_publisher",
-        output="log",
-        arguments=["0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "base_link", "l_wrist_yaw"],
-        parameters=[{"use_sim_time": True}]
+    model_spawner = Node(
+        package='icub_moveit', 
+        executable='spawn_icub.py', 
+        name='spawn_entity', 
+        output='screen', 
     )
 
     robot_state_publisher = Node(
@@ -118,9 +114,6 @@ def generate_launch_description():
     robot_description_semantic_file = load_file("icub_moveit_config", "config/iCub.srdf")
     robot_description_semantic = {"robot_description_semantic": robot_description_semantic_file}
 
-    kinematic_yaml_file = load_yaml("icub_moveit_config", "config/kinematics.yaml")
-    robot_description_kinematic = {"robot_description_kinematic": kinematic_yaml_file}
-
     ompl_planning_pipeline_config = {
         "move_group": {
             "planning_plugin": "ompl_interface/OMPLPlanner",
@@ -155,7 +148,7 @@ def generate_launch_description():
         output="screen",
         parameters=[moveit_config.robot_description,
                     robot_description_semantic,
-                    robot_description_kinematic,
+                    moveit_config.robot_description_kinematics,
                     ompl_planning_pipeline_config,
                     moveit_controllers,
                     trajectory_execution,
@@ -172,7 +165,7 @@ def generate_launch_description():
         arguments=["-d", rviz_moveit],
         parameters=[moveit_config.robot_description, 
                     robot_description_semantic,
-                    robot_description_kinematic,
+                    moveit_config.robot_description_kinematics,
                     ompl_planning_pipeline_config,
                     {"use_sim_time":True}]
     )
@@ -180,7 +173,6 @@ def generate_launch_description():
     return LaunchDescription([
             gazebo,
             model_spawner,
-            static_tf,
             robot_state_publisher,
             RegisterEventHandler(
                 OnProcessExit(
