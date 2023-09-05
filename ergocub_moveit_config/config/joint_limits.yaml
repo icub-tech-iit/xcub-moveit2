@@ -1,0 +1,290 @@
+# joint_limits.yaml allows the dynamics properties specified in the URDF to be overwritten or augmented as needed
+
+# For beginners, we downscale velocity and acceleration limits.
+# You can always specify higher scaling factors (<= 1.0) in your motion requests.  # Increase the values below to 1.0 to always move at maximum speed.
+default_velocity_scaling_factor: 0.1
+default_acceleration_scaling_factor: 0.1
+
+# Specific joint properties can be changed with the keys [max_position, min_position, max_velocity, max_acceleration]
+# Joint limits can be turned off with [has_velocity_limits, has_acceleration_limits]
+joint_limits:
+  l_ankle_pitch:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_ankle_roll:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_elbow:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_hip_pitch:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_hip_roll:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_hip_yaw:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_index_add:
+    has_velocity_limits: true
+    max_velocity: 100
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_index_dist:
+    has_velocity_limits: true
+    max_velocity: 100
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_index_prox:
+    has_velocity_limits: true
+    max_velocity: 100
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_knee:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_middle_dist:
+    has_velocity_limits: true
+    max_velocity: 100
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_middle_prox:
+    has_velocity_limits: true
+    max_velocity: 100
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_pinkie_dist:
+    has_velocity_limits: true
+    max_velocity: 100
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_pinkie_prox:
+    has_velocity_limits: true
+    max_velocity: 100
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_ring_dist:
+    has_velocity_limits: true
+    max_velocity: 100
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_ring_prox:
+    has_velocity_limits: true
+    max_velocity: 100
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_shoulder_pitch:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_shoulder_roll:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_shoulder_yaw:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_thumb_add:
+    has_velocity_limits: true
+    max_velocity: 100
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_thumb_dist:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_thumb_prox:
+    has_velocity_limits: true
+    max_velocity: 100
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_wrist_pitch:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_wrist_roll:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_wrist_yaw:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  neck_pitch:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  neck_roll:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  neck_yaw:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_ankle_pitch:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_ankle_roll:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_elbow:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_hip_pitch:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_hip_roll:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_hip_yaw:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_index_add:
+    has_velocity_limits: true
+    max_velocity: 100
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_index_dist:
+    has_velocity_limits: true
+    max_velocity: 100
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_index_prox:
+    has_velocity_limits: true
+    max_velocity: 100
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_knee:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_middle_dist:
+    has_velocity_limits: true
+    max_velocity: 100
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_middle_prox:
+    has_velocity_limits: true
+    max_velocity: 100
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_pinkie_dist:
+    has_velocity_limits: true
+    max_velocity: 100
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_pinkie_prox:
+    has_velocity_limits: true
+    max_velocity: 100
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_ring_dist:
+    has_velocity_limits: true
+    max_velocity: 100
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_ring_prox:
+    has_velocity_limits: true
+    max_velocity: 100
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_shoulder_pitch:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_shoulder_roll:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_shoulder_yaw:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_thumb_add:
+    has_velocity_limits: true
+    max_velocity: 100
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_thumb_dist:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_thumb_prox:
+    has_velocity_limits: true
+    max_velocity: 100
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_wrist_pitch:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_wrist_roll:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_wrist_yaw:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  torso_pitch:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  torso_roll:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0
+  torso_yaw:
+    has_velocity_limits: true
+    max_velocity: 120
+    has_acceleration_limits: false
+    max_acceleration: 0

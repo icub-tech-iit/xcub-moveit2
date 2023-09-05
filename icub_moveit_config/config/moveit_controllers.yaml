@@ -2,29 +2,73 @@
 
 moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager
 
-moveit_simple_controller_manager:
-  controller_names:
-    - l_arm_controller
-    - l_leg_controller
+controller_names:
+  - left_arm_controller
+  - right_arm_controller
+  - left_leg_controller
+  - right_leg_controller
+  - head_controller
+  - torso_controller
 
-  l_arm_controller:
-    type: FollowJointTrajectory
-    action_ns: follow_joint_trajectory
-    default: true
-    joints:
-      - l_shoulder_roll
-      - l_shoulder_yaw
-      - l_elbow
-      - l_wrist_prosup
-      - l_wrist_pitch
-      - l_wrist_yaw
-  l_leg_controller:
-    type: FollowJointTrajectory
-    action_ns: follow_joint_trajectory
-    default: true
-    joints:
-      - l_hip_roll
-      - l_hip_yaw
-      - l_knee
-      - l_ankle_pitch
-      - l_ankle_roll
+left_arm_controller:
+  type: FollowJointTrajectory
+  action_ns: follow_joint_trajectory
+  default: true
+  joints:
+    - l_shoulder_pitch
+    - l_shoulder_roll
+    - l_shoulder_yaw
+    - l_elbow
+    - l_wrist_prosup
+    - l_wrist_pitch
+    - l_wrist_yaw
+right_arm_controller:
+  type: FollowJointTrajectory
+  action_ns: follow_joint_trajectory
+  default: true
+  joints:
+    - r_shoulder_pitch
+    - r_shoulder_roll
+    - r_shoulder_yaw
+    - r_elbow
+    - r_wrist_prosup
+    - r_wrist_pitch
+    - r_wrist_yaw
+left_leg_controller:
+  type: FollowJointTrajectory
+  action_ns: follow_joint_trajectory
+  default: true
+  joints:
+    - l_hip_pitch
+    - l_hip_roll
+    - l_hip_yaw
+    - l_knee
+    - l_ankle_pitch
+    - l_ankle_roll
+right_leg_controller:
+  type: FollowJointTrajectory
+  action_ns: follow_joint_trajectory
+  default: true
+  joints:
+    - r_hip_pitch
+    - r_hip_roll
+    - r_hip_yaw
+    - r_knee
+    - r_ankle_pitch
+    - r_ankle_roll
+head_controller:
+  type: FollowJointTrajectory
+  action_ns: follow_joint_trajectory
+  default: true
+  joints:
+    - neck_pitch
+    - neck_roll
+    - neck_yaw
+torso_controller:
+  type: FollowJointTrajectory
+  action_ns: follow_joint_trajectory
+  default: true
+  joints:
+    - torso_pitch
+    - torso_roll
+    - torso_yaw

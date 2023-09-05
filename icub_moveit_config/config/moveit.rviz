@@ -18,6 +18,7 @@ Visualization Manager:
       Planned Path:
         Loop Animation: true
         State Display Time: 0.05 s
+        Show Robot Visual: false
         Trajectory Topic: display_planned_path
       Planning Scene Topic: monitored_planning_scene
       Robot Description: robot_description
