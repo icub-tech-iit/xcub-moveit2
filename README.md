@@ -72,7 +72,7 @@ colcon build
 source install/setup.bash
 ```
 
-## Package Descriptions
+## Package description
 
 This section aims to give a brief description of what each package contains.
 
