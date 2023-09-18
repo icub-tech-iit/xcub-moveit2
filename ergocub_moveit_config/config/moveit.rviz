@@ -1,23 +1,29 @@
 Panels:
+  - Class: rviz_visual_tools/RvizVisualToolsGui
+    Name: RvizVisualToolsGui
   - Class: rviz_common/Displays
     Name: Displays
     Property Tree Widget:
-      Expanded:
-        - /MotionPlanning1
   - Class: rviz_common/Help
     Name: Help
-  - Class: rviz_common/Views
-    Name: Views
 Visualization Manager:
   Displays:
     - Class: rviz_default_plugins/Grid
       Name: Grid
       Value: true
+    - Class: rviz_default_plugins/MarkerArray
+      Name: MarkerArray
+      Enabled: true
+      Topic: /display_contacts
+    - Class: rviz_default_plugins/TF
+      Name: TF
+      Enabled: false
     - Class: moveit_rviz_plugin/MotionPlanning
       Name: MotionPlanning
       Planned Path:
-        Loop Animation: true
+        Loop Animation: false
         State Display Time: 0.05 s
+        Show Robot Visual: false
         Trajectory Topic: display_planned_path
       Planning Scene Topic: monitored_planning_scene
       Robot Description: robot_description

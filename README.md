@@ -8,22 +8,20 @@ study-moveit
 
 ## Overview
 
-This repository contains the current state of the ROS2 package for using iCub with MoveIt.
+This repository contains the current state of the ROS2 packages for using iCub and ergoCub with MoveIt.
 
 ## Assumptions
 
-These packages were generated and tested with `ros humble` on a `Ubuntu 22.04` machine.
+These packages were generated and tested with `ros humble` distro on a `Ubuntu 22.04` machine.
 
-## Prerequisites
+## Prerequisites and dependencies
 
 First of all, install [ROS 2 Humble](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html) on your machine and configure your [ROS 2 environment](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#configuring-environment). Then, follow the [MoveIt 2 install guide](https://moveit.ros.org/install-moveit2/binary/) to build all the necessary dependencies.
 
-Inside your ROS2 workspace, it is mandatory to install `yarp-devices-ros2` to use custom ROS messages and services defined in [yarp_control_msgs](https://github.com/robotology/yarp-devices-ros2/tree/master/ros2_interfaces_ws/src/yarp_control_msgs):
+Moreover, it is mandatory to install `yarp-devices-ros2` on your machine to use custom ROS messages and services defined in [yarp_control_msgs](https://github.com/robotology/yarp-devices-ros2/tree/master/ros2_interfaces_ws/src/yarp_control_msgs):
 
 ```shell
-cd ~/<ros2_ws>/src
-
-# Clone the repository 
+# Clone the repository in your workspace
 git clone https://github.com/robotology/yarp-devices-ros2
 
 # Build ROS msgs and compile the colcon workspace
@@ -31,13 +29,17 @@ cd yarp-devices-ros2/ros2_interfaces_ws
 colcon build
 source install/setup.bash
 
-# Compile yarp-devices-ros2
-cd ~/<ros2_ws>/src/yarp-devices-ros2
+# Compile yarp-devices-ros2 specifying the installation path
+cd ..
 mkdir build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=<install_prefix>
 make
 make install
 ```
+
+This repository contains some devices and custom ROS2 interfaces with different purposes and, in particular for this application, it contains the possibility to control a `yarp-based` robot with ROS2. To enable this features, you have to add the `msgs_name` parameter in your configuration file that inizialize the device `controlBoard_nws_ros2`, for example:
+
+![msgs](msg566877121-769207.jpg)
 
 Finally, [TRAC-IK](https://traclabs.com/projects/trac-ik/) is chosen as inverse kinematics solver. It is more accurate and faster when dealing with complex kinematic chains with respect to KDL Kinematics, which represents the standard for MoveIt 2. To install it inside your ROS2  workspace:
 
@@ -66,34 +68,69 @@ git clone https://github.com/icub-tech-iit/study-moveit
 and then build the environment:
 
 ```shell
-cd ~/<ros2_ws>
+cd ..
 source /opt/ros/humble/setup.bash
 colcon build
 source install/setup.bash
 ```
 
+## Usage on real hardware
+
+If you want to control a yarp-based robot (like iCub) using the proposed framework, you have to make sure that your machine is in communication with the robot one on which ros2 is installed. For this reason, be sure that your laptop and the robot machine are on the same network:
+
+- configure your [yarpserver](https://www.yarp.it//v3.5/yarp.html#yarp_conf) as to be the one running on the robot environment;
+- after checking your ip address and the robot one, customize the `cyclonedds.xml` file in this repository as follow:
+  
+![cyclonedds](assets/cyclonedds.jpeg)
+- export this configuration file in the `.bashrc` in order to be used by `Cyclone DDS`:
+
+```
+export CYCLONEDDS_URI=/<path/to/your/ros2_ws>/src/study-moveit/cyclonedds.xml
+```
+- repeat the last two points on the robot, changing the ip address accordingly.
+
+
+However, if you want to work in simulation instead of on the real hardware, you can skip the list above.
+
 ## Package description
 
 This section aims to give a brief description of what each package contains.
 
-### icub_controller
+### robot_controller
 
-This package contains `icub_controller` plugin that is used in [ros2_control](https://control.ros.org/master/index.html) framework. It includes:
+This package contains `robot_controller` plugin that is used in [ros2_control](https://control.ros.org/master/index.html) framework. It includes:
 
 - a `position state interface` used to read the position of each joint;
 - a `velocity state interface` used to read the velocity of each joint;
 - a `position command interface` used to forward the desired position to the joints.
 
-### icub_moveit
+### robot_moveit
 
-This package contains the `icub.launch.py` launch file that allows to start up a set of nodes at the same time. In particular, it spawns the iCub model on both `gazebo` and `rviz` environments, publishes the state of the robot to `tf2` topic, spawns the `ros2_control` nodes and the [move_group](https://moveit.picknik.ai/main/doc/concepts/move_group.html) one, which provides some ROS actions and services for using MoveIt 2 with your robot. To see if everything works, you can try to run:
+This package contains some launch files, depending on the nodes you want to run.
+
+- **`robot.launch.py`**: it allows to start up a set of nodes to bringup the robot. It spawns the model on `rviz`, publishes the state of the robot to `tf2` topic and starts the [move_group](https://moveit.picknik.ai/main/doc/concepts/move_group.html) node, which provides some ROS actions and services for using MoveIt 2 with your robot.
+- **`robot_sim.launch.py`**: it's the same as before, but it spawns the model also in `gazebo` environment to work with the simulated robot.
+- **`robot_controls.launch.py`**: this launch file allows to run the `controller manager` node for ros2_control and the nodes for the single controllers (one for each part).
+- **`circle_demo.launch.py`** and **`grasp_demo.launch.py`**: as the name suggests, they are two examples of commanding the robot in the cartesian space using `torso + right_arm` as planning group. 
+
+
+Before running the nodes, set the `YARP_ROBOT_NAME` environment variable for each shell according to the chosen model (i.e. `icub` or `ergocub`):
+
+```shell
+export YARP_ROBOT_NAME="icub"
+```
+
+Then, you can try to run:
 
 ```shell
 source install/setup.bash
-ros2 launch icub_moveit icub.launch.py
+ros2 launch robot_moveit robot_sim.launch.py
 ```
-
 
 ### icub_moveit_config
 
-This package contains the configuration files to work with MoveIt2. In particular, each of the parts of iCub robot (head, left_arm, right_arm, torso, left_leg and right_leg) are defined in terms of `planning group`, and for each of them a ros2_control of type `FollowJointTrajectory` is set.
+This package contains the configuration files to make iCub working with MoveIt2. In particular, each of the parts of iCub robot (head, left_arm, right_arm, torso, left_leg and right_leg) are defined in terms of `planning group`, and for each of them a ros2_control of type `FollowJointTrajectory` is set.
+
+### ergocub_moveit_config
+
+It contains the same information described in the previous paragraph, but customized with ergoCub specs.

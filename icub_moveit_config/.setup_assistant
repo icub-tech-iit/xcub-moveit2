@@ -3,8 +3,23 @@ moveit_setup_assistant_config:
     package: iCub
     relative_path: robots/iCubGazeboV2_5/model.urdf
   srdf:
-    relative_path: config/iCub.srdf
+    relative_path: config/icub.srdf
   package_settings:
     author_name: Martina Gloria
     author_email: martina.gloria@iit.it
-    generated_timestamp: 1693226179
+    generated_timestamp: 1694094505
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity

@@ -3,5 +3,5 @@ from moveit_configs_utils.launches import generate_setup_assistant_launch
 
 
 def generate_launch_description():
-    moveit_config = MoveItConfigsBuilder("ergoCub", package_name="ergocub_moveit_config").to_moveit_configs()
+    moveit_config = MoveItConfigsBuilder("ergocub", package_name="ergocub_moveit_config").to_moveit_configs()
     return generate_setup_assistant_launch(moveit_config)

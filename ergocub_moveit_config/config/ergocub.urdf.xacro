@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ergoCub">
+    <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
+    <xacro:arg name="input_node" default="ros2_cb_node" />
+    <xacro:arg name="input_component" default="robot_controller" />
+    <xacro:arg name="input_msgs_name" default="icub_cb_msgs" />
+    <!-- Import ergoCub urdf file -->
+    <xacro:include filename="$(find ergoCub)/robots/ergoCubGazeboV1/model.urdf" />
+
+    <!-- Import control_xacro -->
+    <xacro:include filename="ergocub.ros2_control.xacro" />
+
+    <xacro:ergocub_ros2_control name="$(arg input_component)" initial_positions_file="$(arg initial_positions_file)"
+    input_node="$(arg input_node)" input_msgs_name="$(arg input_msgs_name)"/>
+
+</robot>
