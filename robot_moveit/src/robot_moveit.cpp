@@ -102,7 +102,7 @@ int main(int argc, char** argv)
   move_group.execute(circular_trajectory);
 
   // Home
-  visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to move the hand palm down");
+  visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to home");
   visual_tools.deleteAllMarkers();
   visual_tools.trigger();
 

@@ -59,69 +59,6 @@ def generate_launch_description():
                     {"use_sim_time": True}],
     )
 
-    ros2_controllers_path = os.path.join(
-        get_package_share_directory(robot_name+"_moveit_config"),
-        "config",
-        "ros2_controllers.yaml",
-    )
-
-    ros2_control_node = Node(
-        package="controller_manager",
-        executable="ros2_control_node",
-        parameters=[moveit_config.robot_description, ros2_controllers_path,
-                    {"use_sim_time": True}],
-        output="log",
-    )
-
-    right_arm_torso_controller_spawner = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["right_arm_torso_controller", "-c", "/controller_manager"],
-        parameters=[{"use_sim_time": True}],
-    )
-    
-    left_arm_controller_spawner = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["left_arm_controller", "-c", "/controller_manager"],
-        parameters=[{"use_sim_time": True}],
-    )
-
-    right_arm_controller_spawner = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["right_arm_controller", "-c", "/controller_manager", "--inactive"],
-        parameters=[{"use_sim_time": True}],
-    )
-
-    left_leg_controller_spawner = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["left_leg_controller", "-c", "/controller_manager"],
-        parameters=[{"use_sim_time": True}],
-    )
-
-    right_leg_controller_spawner = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["right_leg_controller", "-c", "/controller_manager"],
-        parameters=[{"use_sim_time": True}],
-    )
-
-    head_controller_spawner = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["head_controller", "-c", "/controller_manager"],
-        parameters=[{"use_sim_time": True}],
-    )
-
-    torso_controller_spawner = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["torso_controller", "-c", "/controller_manager", "--inactive"],
-        parameters=[{"use_sim_time": True}],
-    )
-
     robot_description_semantic_file = load_file(robot_name+"_moveit_config", "config/"+robot_name+".srdf")
     robot_description_semantic = {"robot_description_semantic": robot_description_semantic_file}
 
@@ -192,12 +129,6 @@ def generate_launch_description():
             gazebo,
             model_spawner,
             robot_state_publisher,
-            ros2_control_node,
-            right_arm_torso_controller_spawner,
-            right_arm_controller_spawner,
-            left_arm_controller_spawner,
-            head_controller_spawner,
-            torso_controller_spawner,
             rviz2,
             move_group_node
         ]
