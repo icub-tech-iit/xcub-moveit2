@@ -55,7 +55,7 @@ source install/setup.bash
 ```
 
 > **_NOTE:_** If you don't want to source your ros humble setup file each time a new shell is open, you can add this command in your `.bashrc`:
-> ```
+> ```shell
 > echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 > ```
 
@@ -135,7 +135,7 @@ It contains the same information described in the previous paragraph, but custom
 
 ## Use case
 
-As described in the previous section, this repository contains two demos that show the possibility to control a yarp-based robot within the MoveIt2 framework in the Cartesian space. First of all, make sure that `yarpserver` is running on your machine. Then, you can start launching a basic simulation:
+As described in the previous section, this repository contains two demos that shows the possibility to control a yarp-based robot within the MoveIt2 framework in the Cartesian space. First of all, make sure that `yarpserver` is running on your machine. Then, you can start launching a basic simulation:
 
 ```shell
 # Build the packages within your ros2 workspace
@@ -191,4 +191,5 @@ ros2 launch robot_moveit circle_demo.launch.py
 and follow the instructions on the third shell you opened.
 You should have something like this:
 
-<video src="assets/circle.mp4" controls title="circle_demo"></video>
+<video src="assets/circle.mp4" controls title="circle_demo">
+</video>
