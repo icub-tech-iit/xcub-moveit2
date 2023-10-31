@@ -8,163 +8,163 @@ default_acceleration_scaling_factor: 0.1
 # Specific joint properties can be changed with the keys [max_position, min_position, max_velocity, max_acceleration]
 # Joint limits can be turned off with [has_velocity_limits, has_acceleration_limits]
 joint_limits:
-  l_ankle_pitch:
-    has_velocity_limits: true
-    max_velocity: 7.6399999999999997
-    has_acceleration_limits: false
-    max_acceleration: 0
-  l_ankle_roll:
-    has_velocity_limits: true
-    max_velocity: 7.6399999999999997
-    has_acceleration_limits: false
-    max_acceleration: 0
+  # l_ankle_pitch:
+  #   has_velocity_limits: true
+  #   max_velocity: 7.6399999999999997
+  #   has_acceleration_limits: true
+  #   max_acceleration: 500
+  # l_ankle_roll:
+  #   has_velocity_limits: true
+  #   max_velocity: 7.6399999999999997
+  #   has_acceleration_limits: true
+  #   max_acceleration: 500
   l_elbow:
     has_velocity_limits: true
     max_velocity: 50000
-    has_acceleration_limits: false
-    max_acceleration: 0
-  l_hip_pitch:
-    has_velocity_limits: true
-    max_velocity: 5.0999999999999996
-    has_acceleration_limits: false
-    max_acceleration: 0
-  l_hip_roll:
-    has_velocity_limits: true
-    max_velocity: 7.6399999999999997
-    has_acceleration_limits: false
-    max_acceleration: 0
-  l_hip_yaw:
-    has_velocity_limits: true
-    max_velocity: 7.6399999999999997
-    has_acceleration_limits: false
-    max_acceleration: 0
-  l_knee:
-    has_velocity_limits: true
-    max_velocity: 7.6399999999999997
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 500
+  # l_hip_pitch:
+  #   has_velocity_limits: true
+  #   max_velocity: 5.0999999999999996
+  #   has_acceleration_limits: true
+  #   max_acceleration: 500
+  # l_hip_roll:
+  #   has_velocity_limits: true
+  #   max_velocity: 7.6399999999999997
+  #   has_acceleration_limits: true
+  #   max_acceleration: 500
+  # l_hip_yaw:
+  #   has_velocity_limits: true
+  #   max_velocity: 7.6399999999999997
+  #   has_acceleration_limits: true
+  #   max_acceleration: 500
+  # l_knee:
+  #   has_velocity_limits: true
+  #   max_velocity: 7.6399999999999997
+  #   has_acceleration_limits: true
+  #   max_acceleration: 500
   l_shoulder_pitch:
     has_velocity_limits: true
     max_velocity: 50000
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 500
   l_shoulder_roll:
     has_velocity_limits: true
     max_velocity: 50000
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 500
   l_shoulder_yaw:
     has_velocity_limits: true
     max_velocity: 50000
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 500
   l_wrist_pitch:
     has_velocity_limits: true
     max_velocity: 50000
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 500
   l_wrist_prosup:
     has_velocity_limits: true
     max_velocity: 50000
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 500
   l_wrist_yaw:
     has_velocity_limits: true
     max_velocity: 50000
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 500
   neck_pitch:
     has_velocity_limits: true
     max_velocity: 50000
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 500
   neck_roll:
     has_velocity_limits: true
     max_velocity: 50000
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 500
   neck_yaw:
     has_velocity_limits: true
     max_velocity: 50000
-    has_acceleration_limits: false
-    max_acceleration: 0
-  r_ankle_pitch:
-    has_velocity_limits: true
-    max_velocity: 7.6399999999999997
-    has_acceleration_limits: false
-    max_acceleration: 0
-  r_ankle_roll:
-    has_velocity_limits: true
-    max_velocity: 7.6399999999999997
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 500
+  # r_ankle_pitch:
+  #   has_velocity_limits: true
+  #   max_velocity: 7.6399999999999997
+  #   has_acceleration_limits: true
+  #   max_acceleration: 500
+  # r_ankle_roll:
+  #   has_velocity_limits: true
+  #   max_velocity: 7.6399999999999997
+  #   has_acceleration_limits: true
+  #   max_acceleration: 500
   r_elbow:
     has_velocity_limits: true
     max_velocity: 50000
-    has_acceleration_limits: false
-    max_acceleration: 0
-  r_hip_pitch:
-    has_velocity_limits: true
-    max_velocity: 5.0999999999999996
-    has_acceleration_limits: false
-    max_acceleration: 0
-  r_hip_roll:
-    has_velocity_limits: true
-    max_velocity: 7.6399999999999997
-    has_acceleration_limits: false
-    max_acceleration: 0
-  r_hip_yaw:
-    has_velocity_limits: true
-    max_velocity: 7.6399999999999997
-    has_acceleration_limits: false
-    max_acceleration: 0
-  r_knee:
-    has_velocity_limits: true
-    max_velocity: 7.6399999999999997
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 500
+  # r_hip_pitch:
+  #   has_velocity_limits: true
+  #   max_velocity: 5.0999999999999996
+  #   has_acceleration_limits: true
+  #   max_acceleration: 500
+  # r_hip_roll:
+  #   has_velocity_limits: true
+  #   max_velocity: 7.6399999999999997
+  #   has_acceleration_limits: true
+  #   max_acceleration: 500
+  # r_hip_yaw:
+  #   has_velocity_limits: true
+  #   max_velocity: 7.6399999999999997
+  #   has_acceleration_limits: true
+  #   max_acceleration: 500
+  # r_knee:
+  #   has_velocity_limits: true
+  #   max_velocity: 7.6399999999999997
+  #   has_acceleration_limits: true
+  #   max_acceleration: 500
   r_shoulder_pitch:
     has_velocity_limits: true
     max_velocity: 50000
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 500
   r_shoulder_roll:
     has_velocity_limits: true
     max_velocity: 50000
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 500
   r_shoulder_yaw:
     has_velocity_limits: true
     max_velocity: 50000
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 500
   r_wrist_pitch:
     has_velocity_limits: true
     max_velocity: 50000
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 500
   r_wrist_prosup:
     has_velocity_limits: true
     max_velocity: 50000
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 500
   r_wrist_yaw:
     has_velocity_limits: true
     max_velocity: 50000
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 500
   torso_pitch:
     has_velocity_limits: true
     max_velocity: 50000
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 500
   torso_roll:
     has_velocity_limits: true
     max_velocity: 50000
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 500
   torso_yaw:
     has_velocity_limits: true
     max_velocity: 50000
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 500

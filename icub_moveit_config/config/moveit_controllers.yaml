@@ -5,10 +5,11 @@ moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControll
 controller_names:
   - left_arm_controller
   - right_arm_controller
-  - left_leg_controller
-  - right_leg_controller
+  # - left_leg_controller
+  # - right_leg_controller
   - head_controller
   - torso_controller
+  - right_arm_torso_controller
 
 left_arm_controller:
   type: FollowJointTrajectory
@@ -22,6 +23,8 @@ left_arm_controller:
     - l_wrist_prosup
     - l_wrist_pitch
     - l_wrist_yaw
+  action_ns: follow_joint_trajectory
+  default: true
 right_arm_controller:
   type: FollowJointTrajectory
   action_ns: follow_joint_trajectory
@@ -34,28 +37,28 @@ right_arm_controller:
     - r_wrist_prosup
     - r_wrist_pitch
     - r_wrist_yaw
-left_leg_controller:
-  type: FollowJointTrajectory
-  action_ns: follow_joint_trajectory
-  default: true
-  joints:
-    - l_hip_pitch
-    - l_hip_roll
-    - l_hip_yaw
-    - l_knee
-    - l_ankle_pitch
-    - l_ankle_roll
-right_leg_controller:
-  type: FollowJointTrajectory
-  action_ns: follow_joint_trajectory
-  default: true
-  joints:
-    - r_hip_pitch
-    - r_hip_roll
-    - r_hip_yaw
-    - r_knee
-    - r_ankle_pitch
-    - r_ankle_roll
+# left_leg_controller:
+#   type: FollowJointTrajectory
+#   action_ns: follow_joint_trajectory
+#   default: true
+#   joints:
+#     - l_hip_pitch
+#     - l_hip_roll
+#     - l_hip_yaw
+#     - l_knee
+#     - l_ankle_pitch
+#     - l_ankle_roll
+# right_leg_controller:
+#   type: FollowJointTrajectory
+#   action_ns: follow_joint_trajectory
+#   default: true
+#   joints:
+#     - r_hip_pitch
+#     - r_hip_roll
+#     - r_hip_yaw
+#     - r_knee
+#     - r_ankle_pitch
+#     - r_ankle_roll
 head_controller:
   type: FollowJointTrajectory
   action_ns: follow_joint_trajectory
@@ -72,3 +75,18 @@ torso_controller:
     - torso_pitch
     - torso_roll
     - torso_yaw
+right_arm_torso_controller:
+  type: FollowJointTrajectory
+  action_ns: follow_joint_trajectory
+  default: true
+  joints:
+    - torso_pitch
+    - torso_roll
+    - torso_yaw
+    - r_shoulder_pitch
+    - r_shoulder_roll
+    - r_shoulder_yaw
+    - r_elbow
+    - r_wrist_prosup
+    - r_wrist_pitch
+    - r_wrist_yaw

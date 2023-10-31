@@ -3,23 +3,8 @@ moveit_setup_assistant_config:
     package: ergoCub
     relative_path: robots/ergoCubGazeboV1/model.urdf
   srdf:
-    relative_path: config/ergoCub.srdf
+    relative_path: config/ergocub.srdf
   package_settings:
     author_name: Martina Gloria
     author_email: martina.gloria@iit.it
-    generated_timestamp: 1693397728
-  control_xacro:
-    command:
-      - position
-    state:
-      - position
-      - velocity
-  modified_urdf:
-    xacros:
-      - control_xacro
-  control_xacro:
-    command:
-      - position
-    state:
-      - position
-      - velocity
+    generated_timestamp: 1695734298

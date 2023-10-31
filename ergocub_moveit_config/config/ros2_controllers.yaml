@@ -3,19 +3,19 @@ controller_manager:
   ros__parameters:
     update_rate: 100  # Hz
 
-    l_arm_controller:
+    left_arm_controller:
       type: joint_trajectory_controller/JointTrajectoryController
 
 
-    r_arm_controller:
+    right_arm_controller:
       type: joint_trajectory_controller/JointTrajectoryController
 
 
-    l_leg_controller:
+    left_leg_controller:
       type: joint_trajectory_controller/JointTrajectoryController
 
 
-    r_leg_controller:
+    right_leg_controller:
       type: joint_trajectory_controller/JointTrajectoryController
 
 
@@ -27,12 +27,17 @@ controller_manager:
       type: joint_trajectory_controller/JointTrajectoryController
 
 
+    left_arm_torso_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
-l_arm_controller:
+left_arm_controller:
   ros__parameters:
     joints:
+      - l_shoulder_pitch
       - l_shoulder_roll
       - l_shoulder_yaw
       - l_elbow
@@ -44,9 +49,10 @@ l_arm_controller:
     state_interfaces:
       - position
       - velocity
-r_arm_controller:
+right_arm_controller:
   ros__parameters:
     joints:
+      - r_shoulder_pitch
       - r_shoulder_roll
       - r_shoulder_yaw
       - r_elbow
@@ -58,7 +64,7 @@ r_arm_controller:
     state_interfaces:
       - position
       - velocity
-l_leg_controller:
+left_leg_controller:
   ros__parameters:
     joints:
       - l_hip_pitch
@@ -72,7 +78,7 @@ l_leg_controller:
     state_interfaces:
       - position
       - velocity
-r_leg_controller:
+right_leg_controller:
   ros__parameters:
     joints:
       - r_hip_pitch
@@ -100,9 +106,27 @@ head_controller:
 torso_controller:
   ros__parameters:
     joints:
-    - torso_pitch
-    - torso_roll
-    - torso_yaw
+      - torso_pitch
+      - torso_roll
+      - torso_yaw
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+left_arm_torso_controller:
+  ros__parameters:
+    joints:
+      - torso_roll
+      - torso_pitch
+      - torso_yaw
+      - l_shoulder_pitch
+      - l_shoulder_roll
+      - l_shoulder_yaw
+      - l_elbow
+      - l_wrist_yaw
+      - l_wrist_roll
+      - l_wrist_pitch
     command_interfaces:
       - position
     state_interfaces:

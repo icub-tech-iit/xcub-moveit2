@@ -3,18 +3,20 @@
 moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager
 
 controller_names:
-  - l_arm_controller
-  - r_arm_controller
-  - l_leg_controller
-  - r_leg_controller
+  - left_arm_controller
+  - right_arm_controller
+  - left_leg_controller
+  - right_leg_controller
   - head_controller
   - torso_controller
+  - left_arm_torso_controller
 
-l_arm_controller:
+left_arm_controller:
   type: FollowJointTrajectory
   action_ns: follow_joint_trajectory
   default: true
   joints:
+    - l_shoulder_pitch
     - l_shoulder_roll
     - l_shoulder_yaw
     - l_elbow
@@ -23,11 +25,12 @@ l_arm_controller:
     - l_wrist_pitch
   action_ns: follow_joint_trajectory
   default: true
-r_arm_controller:
+right_arm_controller:
   type: FollowJointTrajectory
   action_ns: follow_joint_trajectory
   default: true
   joints:
+    - r_shoulder_pitch
     - r_shoulder_roll
     - r_shoulder_yaw
     - r_elbow
@@ -36,7 +39,7 @@ r_arm_controller:
     - r_wrist_pitch
   action_ns: follow_joint_trajectory
   default: true
-l_leg_controller:
+left_leg_controller:
   type: FollowJointTrajectory
   action_ns: follow_joint_trajectory
   default: true
@@ -47,7 +50,7 @@ l_leg_controller:
     - l_knee
     - l_ankle_pitch
     - l_ankle_roll
-r_leg_controller:
+right_leg_controller:
   type: FollowJointTrajectory
   action_ns: follow_joint_trajectory
   default: true
@@ -74,3 +77,18 @@ torso_controller:
     - torso_pitch
     - torso_roll
     - torso_yaw
+left_arm_torso_controller:
+  type: FollowJointTrajectory
+  action_ns: follow_joint_trajectory
+  default: true
+  joints:
+    - torso_roll
+    - torso_pitch
+    - torso_yaw
+    - l_shoulder_pitch
+    - l_shoulder_roll
+    - l_shoulder_yaw
+    - l_elbow
+    - l_wrist_yaw
+    - l_wrist_roll
+    - l_wrist_pitch

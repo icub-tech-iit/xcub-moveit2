@@ -1,0 +1,5 @@
+.vscode/
+*.setup_assistant
+log/
+install/
+build/
