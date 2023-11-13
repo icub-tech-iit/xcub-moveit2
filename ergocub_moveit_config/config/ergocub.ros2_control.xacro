@@ -274,7 +274,7 @@
                 <state_interface name="velocity"/>
             </joint>
         </ros2_control>
-        <ros2_control name="left_arm_torso_${name}" type="system">
+        <ros2_control name="right_arm_torso_${name}" type="system">
           <hardware>
               <plugin>robot_controller/RobotController</plugin>
               <param name="node_name">ros2_cb_node</param>
@@ -301,52 +301,52 @@
             </state_interface>
             <state_interface name="velocity"/>
         </joint>
-          <joint name="l_shoulder_pitch">
+          <joint name="r_shoulder_pitch">
             <command_interface name="position"/>
             <state_interface name="position">
-              <param name="initial_value">${initial_positions['l_shoulder_pitch']}</param>
+              <param name="initial_value">${initial_positions['r_shoulder_pitch']}</param>
             </state_interface>
             <state_interface name="velocity"/>
           </joint>
-          <joint name="l_shoulder_roll">
+          <joint name="r_shoulder_roll">
               <command_interface name="position"/>
               <state_interface name="position">
-                <param name="initial_value">${initial_positions['l_shoulder_roll']}</param>
+                <param name="initial_value">${initial_positions['r_shoulder_roll']}</param>
               </state_interface>
               <state_interface name="velocity"/>
           </joint>
-          <joint name="l_shoulder_yaw">
+          <joint name="r_shoulder_yaw">
               <command_interface name="position"/>
               <state_interface name="position">
-                <param name="initial_value">${initial_positions['l_shoulder_yaw']}</param>
+                <param name="initial_value">${initial_positions['r_shoulder_yaw']}</param>
               </state_interface>
               <state_interface name="velocity"/>
           </joint>
-          <joint name="l_elbow">
+          <joint name="r_elbow">
               <command_interface name="position"/>
               <state_interface name="position">
-                <param name="initial_value">${initial_positions['l_elbow']}</param>
+                <param name="initial_value">${initial_positions['r_elbow']}</param>
               </state_interface>
               <state_interface name="velocity"/>
           </joint>
-          <joint name="l_wrist_yaw">
+          <joint name="r_wrist_yaw">
               <command_interface name="position"/>
               <state_interface name="position">
-                <param name="initial_value">${initial_positions['l_wrist_yaw']}</param>
+                <param name="initial_value">${initial_positions['r_wrist_yaw']}</param>
               </state_interface>
               <state_interface name="velocity"/>
           </joint>
-          <joint name="l_wrist_roll">
+          <joint name="r_wrist_roll">
               <command_interface name="position"/>
               <state_interface name="position">
-                <param name="initial_value">${initial_positions['l_wrist_roll']}</param>
+                <param name="initial_value">${initial_positions['r_wrist_roll']}</param>
               </state_interface>
               <state_interface name="velocity"/>
           </joint>
-          <joint name="l_wrist_pitch">
+          <joint name="r_wrist_pitch">
               <command_interface name="position"/>
               <state_interface name="position">
-                <param name="initial_value">${initial_positions['l_wrist_pitch']}</param>
+                <param name="initial_value">${initial_positions['r_wrist_pitch']}</param>
               </state_interface>
               <state_interface name="velocity"/>
           </joint>

@@ -2,56 +2,2512 @@ Panels:
   - Class: rviz_visual_tools/RvizVisualToolsGui
     Name: RvizVisualToolsGui
   - Class: rviz_common/Displays
+    Help Height: 70
     Name: Displays
     Property Tree Widget:
+      Expanded:
+        - /TF1
+        - /TF1/Frames1
+      Splitter Ratio: 0.5
+    Tree Height: 267
   - Class: rviz_common/Help
     Name: Help
 Visualization Manager:
+  Class: ""
   Displays:
-    - Class: rviz_default_plugins/Grid
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz_default_plugins/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.029999999329447746
+        Value: Lines
       Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 10
+      Reference Frame: <Fixed Frame>
       Value: true
     - Class: rviz_default_plugins/MarkerArray
-      Name: MarkerArray
       Enabled: true
-      Topic: /display_contacts
+      Name: MarkerArray
+      Namespaces:
+        {}
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /display_contacts
+      Value: true
     - Class: rviz_default_plugins/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        base_link:
+          Value: false
+        chest:
+          Value: false
+        chest_ems_gyro_eb1:
+          Value: false
+        chest_ems_gyro_eb2:
+          Value: false
+        chest_ems_gyro_eb3:
+          Value: false
+        chest_ems_gyro_eb4:
+          Value: false
+        head:
+          Value: false
+        head_imu_0:
+          Value: false
+        l_ankle_2:
+          Value: false
+        l_arm_ft:
+          Value: false
+        l_elbow_1:
+          Value: false
+        l_foot:
+          Value: false
+        l_foot_dh_frame:
+          Value: false
+        l_foot_ft:
+          Value: false
+        l_foot_ft_gyro_3b13:
+          Value: false
+        l_forearm:
+          Value: false
+        l_forearm_dh_frame:
+          Value: false
+        l_forearm_skin_0:
+          Value: false
+        l_forearm_skin_1:
+          Value: false
+        l_forearm_skin_10:
+          Value: false
+        l_forearm_skin_11:
+          Value: false
+        l_forearm_skin_12:
+          Value: false
+        l_forearm_skin_13:
+          Value: false
+        l_forearm_skin_14:
+          Value: false
+        l_forearm_skin_15:
+          Value: false
+        l_forearm_skin_16:
+          Value: false
+        l_forearm_skin_17:
+          Value: false
+        l_forearm_skin_19:
+          Value: false
+        l_forearm_skin_2:
+          Value: false
+        l_forearm_skin_22:
+          Value: false
+        l_forearm_skin_24:
+          Value: false
+        l_forearm_skin_25:
+          Value: false
+        l_forearm_skin_28:
+          Value: false
+        l_forearm_skin_29:
+          Value: false
+        l_forearm_skin_3:
+          Value: false
+        l_forearm_skin_4:
+          Value: false
+        l_forearm_skin_5:
+          Value: false
+        l_forearm_skin_6:
+          Value: false
+        l_forearm_skin_7:
+          Value: false
+        l_forearm_skin_8:
+          Value: false
+        l_forearm_skin_9:
+          Value: false
+        l_hand:
+          Value: false
+        l_hand_dh_frame:
+          Value: false
+        l_hip_2:
+          Value: false
+        l_hip_3:
+          Value: false
+        l_leg_ft:
+          Value: false
+        l_lower_leg:
+          Value: false
+        l_lower_leg_ems_gyro_eb7:
+          Value: false
+        l_shoulder_1:
+          Value: false
+        l_shoulder_2:
+          Value: false
+        l_shoulder_3:
+          Value: false
+        l_sole:
+          Value: false
+        l_sole_skin_0:
+          Value: false
+        l_sole_skin_1:
+          Value: false
+        l_sole_skin_10:
+          Value: false
+        l_sole_skin_11:
+          Value: false
+        l_sole_skin_12:
+          Value: false
+        l_sole_skin_13:
+          Value: false
+        l_sole_skin_14:
+          Value: false
+        l_sole_skin_15:
+          Value: false
+        l_sole_skin_17:
+          Value: false
+        l_sole_skin_18:
+          Value: false
+        l_sole_skin_19:
+          Value: false
+        l_sole_skin_2:
+          Value: false
+        l_sole_skin_20:
+          Value: false
+        l_sole_skin_21:
+          Value: false
+        l_sole_skin_22:
+          Value: false
+        l_sole_skin_24:
+          Value: false
+        l_sole_skin_25:
+          Value: false
+        l_sole_skin_26:
+          Value: false
+        l_sole_skin_27:
+          Value: false
+        l_sole_skin_28:
+          Value: false
+        l_sole_skin_29:
+          Value: false
+        l_sole_skin_3:
+          Value: false
+        l_sole_skin_4:
+          Value: false
+        l_sole_skin_8:
+          Value: false
+        l_sole_skin_9:
+          Value: false
+        l_upper_arm:
+          Value: false
+        l_upper_leg:
+          Value: false
+        l_upper_leg_back_contact:
+          Value: false
+        l_upper_leg_dh_frame:
+          Value: false
+        l_upper_leg_ems_gyro_eb10:
+          Value: false
+        l_upper_leg_ems_gyro_eb6:
+          Value: false
+        l_upper_leg_ft_gyro_3b12:
+          Value: false
+        l_wrist_1:
+          Value: false
+        neck_1:
+          Value: false
+        neck_2:
+          Value: false
+        r_ankle_2:
+          Value: false
+        r_arm_ft:
+          Value: false
+        r_elbow_1:
+          Value: false
+        r_foot:
+          Value: false
+        r_foot_dh_frame:
+          Value: false
+        r_foot_ft:
+          Value: false
+        r_foot_ft_gyro_3b14:
+          Value: false
+        r_forearm:
+          Value: false
+        r_forearm_dh_frame:
+          Value: false
+        r_forearm_skin_0:
+          Value: false
+        r_forearm_skin_1:
+          Value: false
+        r_forearm_skin_10:
+          Value: false
+        r_forearm_skin_11:
+          Value: false
+        r_forearm_skin_12:
+          Value: false
+        r_forearm_skin_13:
+          Value: false
+        r_forearm_skin_14:
+          Value: false
+        r_forearm_skin_15:
+          Value: false
+        r_forearm_skin_16:
+          Value: false
+        r_forearm_skin_17:
+          Value: false
+        r_forearm_skin_19:
+          Value: false
+        r_forearm_skin_2:
+          Value: false
+        r_forearm_skin_22:
+          Value: false
+        r_forearm_skin_24:
+          Value: false
+        r_forearm_skin_25:
+          Value: false
+        r_forearm_skin_28:
+          Value: false
+        r_forearm_skin_29:
+          Value: false
+        r_forearm_skin_3:
+          Value: false
+        r_forearm_skin_4:
+          Value: false
+        r_forearm_skin_5:
+          Value: false
+        r_forearm_skin_6:
+          Value: false
+        r_forearm_skin_7:
+          Value: false
+        r_forearm_skin_8:
+          Value: false
+        r_forearm_skin_9:
+          Value: false
+        r_hand:
+          Value: false
+        r_hand_dh_frame:
+          Value: true
+        r_hip_2:
+          Value: false
+        r_hip_3:
+          Value: false
+        r_leg_ft:
+          Value: false
+        r_lower_leg:
+          Value: false
+        r_lower_leg_ems_gyro_eb9:
+          Value: false
+        r_lower_leg_skin_0:
+          Value: false
+        r_lower_leg_skin_10:
+          Value: false
+        r_lower_leg_skin_11:
+          Value: false
+        r_lower_leg_skin_14:
+          Value: false
+        r_lower_leg_skin_15:
+          Value: false
+        r_lower_leg_skin_16:
+          Value: false
+        r_lower_leg_skin_17:
+          Value: false
+        r_lower_leg_skin_19:
+          Value: false
+        r_lower_leg_skin_20:
+          Value: false
+        r_lower_leg_skin_21:
+          Value: false
+        r_lower_leg_skin_28:
+          Value: false
+        r_lower_leg_skin_29:
+          Value: false
+        r_lower_leg_skin_3:
+          Value: false
+        r_lower_leg_skin_31:
+          Value: false
+        r_lower_leg_skin_32:
+          Value: false
+        r_lower_leg_skin_35:
+          Value: false
+        r_lower_leg_skin_36:
+          Value: false
+        r_lower_leg_skin_37:
+          Value: false
+        r_lower_leg_skin_38:
+          Value: false
+        r_lower_leg_skin_4:
+          Value: false
+        r_lower_leg_skin_41:
+          Value: false
+        r_lower_leg_skin_42:
+          Value: false
+        r_lower_leg_skin_43:
+          Value: false
+        r_lower_leg_skin_46:
+          Value: false
+        r_lower_leg_skin_47:
+          Value: false
+        r_lower_leg_skin_49:
+          Value: false
+        r_lower_leg_skin_5:
+          Value: false
+        r_lower_leg_skin_50:
+          Value: false
+        r_lower_leg_skin_51:
+          Value: false
+        r_lower_leg_skin_52:
+          Value: false
+        r_lower_leg_skin_53:
+          Value: false
+        r_lower_leg_skin_54:
+          Value: false
+        r_lower_leg_skin_55:
+          Value: false
+        r_lower_leg_skin_56:
+          Value: false
+        r_lower_leg_skin_6:
+          Value: false
+        r_lower_leg_skin_60:
+          Value: false
+        r_lower_leg_skin_61:
+          Value: false
+        r_lower_leg_skin_9:
+          Value: false
+        r_shoulder_1:
+          Value: false
+        r_shoulder_2:
+          Value: false
+        r_shoulder_3:
+          Value: false
+        r_sole:
+          Value: false
+        r_sole_skin_0:
+          Value: false
+        r_sole_skin_1:
+          Value: false
+        r_sole_skin_10:
+          Value: false
+        r_sole_skin_11:
+          Value: false
+        r_sole_skin_12:
+          Value: false
+        r_sole_skin_13:
+          Value: false
+        r_sole_skin_14:
+          Value: false
+        r_sole_skin_15:
+          Value: false
+        r_sole_skin_17:
+          Value: false
+        r_sole_skin_18:
+          Value: false
+        r_sole_skin_19:
+          Value: false
+        r_sole_skin_2:
+          Value: false
+        r_sole_skin_20:
+          Value: false
+        r_sole_skin_21:
+          Value: false
+        r_sole_skin_22:
+          Value: false
+        r_sole_skin_24:
+          Value: false
+        r_sole_skin_25:
+          Value: false
+        r_sole_skin_26:
+          Value: false
+        r_sole_skin_27:
+          Value: false
+        r_sole_skin_28:
+          Value: false
+        r_sole_skin_29:
+          Value: false
+        r_sole_skin_3:
+          Value: false
+        r_sole_skin_4:
+          Value: false
+        r_sole_skin_8:
+          Value: false
+        r_sole_skin_9:
+          Value: false
+        r_upper_arm:
+          Value: false
+        r_upper_leg:
+          Value: false
+        r_upper_leg_back_contact:
+          Value: false
+        r_upper_leg_dh_frame:
+          Value: false
+        r_upper_leg_ems_gyro_eb11:
+          Value: false
+        r_upper_leg_ems_gyro_eb8:
+          Value: false
+        r_upper_leg_ft_gyro_3b11:
+          Value: false
+        r_wrist_1:
+          Value: false
+        root_link:
+          Value: true
+        root_link_ems_gyro_eb5:
+          Value: false
+        torso_1:
+          Value: false
+        torso_2:
+          Value: false
+      Marker Scale: 1
       Name: TF
-      Enabled: false
-    - Class: moveit_rviz_plugin/MotionPlanning
+      Show Arrows: true
+      Show Axes: true
+      Show Names: false
+      Tree:
+        root_link:
+          base_link:
+            {}
+          root_link_ems_gyro_eb5:
+            {}
+          torso_1:
+            torso_2:
+              chest:
+                chest_ems_gyro_eb1:
+                  {}
+                chest_ems_gyro_eb2:
+                  {}
+                chest_ems_gyro_eb3:
+                  {}
+                chest_ems_gyro_eb4:
+                  {}
+                l_shoulder_1:
+                  l_shoulder_2:
+                    l_shoulder_3:
+                      l_arm_ft:
+                        {}
+                      l_upper_arm:
+                        l_elbow_1:
+                          l_forearm:
+                            l_forearm_dh_frame:
+                              {}
+                            l_forearm_skin_0:
+                              {}
+                            l_forearm_skin_1:
+                              {}
+                            l_forearm_skin_10:
+                              {}
+                            l_forearm_skin_11:
+                              {}
+                            l_forearm_skin_12:
+                              {}
+                            l_forearm_skin_13:
+                              {}
+                            l_forearm_skin_14:
+                              {}
+                            l_forearm_skin_15:
+                              {}
+                            l_forearm_skin_16:
+                              {}
+                            l_forearm_skin_17:
+                              {}
+                            l_forearm_skin_19:
+                              {}
+                            l_forearm_skin_2:
+                              {}
+                            l_forearm_skin_22:
+                              {}
+                            l_forearm_skin_24:
+                              {}
+                            l_forearm_skin_25:
+                              {}
+                            l_forearm_skin_28:
+                              {}
+                            l_forearm_skin_29:
+                              {}
+                            l_forearm_skin_3:
+                              {}
+                            l_forearm_skin_4:
+                              {}
+                            l_forearm_skin_5:
+                              {}
+                            l_forearm_skin_6:
+                              {}
+                            l_forearm_skin_7:
+                              {}
+                            l_forearm_skin_8:
+                              {}
+                            l_forearm_skin_9:
+                              {}
+                            l_wrist_1:
+                              l_hand:
+                                l_hand_dh_frame:
+                                  {}
+                neck_1:
+                  neck_2:
+                    head:
+                      head_imu_0:
+                        {}
+                r_shoulder_1:
+                  r_shoulder_2:
+                    r_shoulder_3:
+                      r_arm_ft:
+                        {}
+                      r_upper_arm:
+                        r_elbow_1:
+                          r_forearm:
+                            r_forearm_dh_frame:
+                              {}
+                            r_forearm_skin_0:
+                              {}
+                            r_forearm_skin_1:
+                              {}
+                            r_forearm_skin_10:
+                              {}
+                            r_forearm_skin_11:
+                              {}
+                            r_forearm_skin_12:
+                              {}
+                            r_forearm_skin_13:
+                              {}
+                            r_forearm_skin_14:
+                              {}
+                            r_forearm_skin_15:
+                              {}
+                            r_forearm_skin_16:
+                              {}
+                            r_forearm_skin_17:
+                              {}
+                            r_forearm_skin_19:
+                              {}
+                            r_forearm_skin_2:
+                              {}
+                            r_forearm_skin_22:
+                              {}
+                            r_forearm_skin_24:
+                              {}
+                            r_forearm_skin_25:
+                              {}
+                            r_forearm_skin_28:
+                              {}
+                            r_forearm_skin_29:
+                              {}
+                            r_forearm_skin_3:
+                              {}
+                            r_forearm_skin_4:
+                              {}
+                            r_forearm_skin_5:
+                              {}
+                            r_forearm_skin_6:
+                              {}
+                            r_forearm_skin_7:
+                              {}
+                            r_forearm_skin_8:
+                              {}
+                            r_forearm_skin_9:
+                              {}
+                            r_wrist_1:
+                              r_hand:
+                                r_hand_dh_frame:
+                                  {}
+      Update Interval: 0
+      Value: true
+    - Acceleration_Scaling_Factor: 0.1
+      Class: moveit_rviz_plugin/MotionPlanning
+      Enabled: true
+      Move Group Namespace: ""
+      MoveIt_Allow_Approximate_IK: false
+      MoveIt_Allow_External_Program: false
+      MoveIt_Allow_Replanning: false
+      MoveIt_Allow_Sensor_Positioning: false
+      MoveIt_Planning_Attempts: 10
+      MoveIt_Planning_Time: 5
+      MoveIt_Use_Cartesian_Path: false
+      MoveIt_Use_Constraint_Aware_IK: false
+      MoveIt_Workspace:
+        Center:
+          X: 0
+          Y: 0
+          Z: 0
+        Size:
+          X: 2
+          Y: 2
+          Z: 2
       Name: MotionPlanning
       Planned Path:
+        Color Enabled: false
+        Interrupt Display: false
+        Links:
+          All Links Enabled: true
+          Expand Joint Details: false
+          Expand Link Details: false
+          Expand Tree: false
+          Link Tree Style: Links in Alphabetic Order
+          base_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          chest:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          chest_ems_gyro_eb1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          chest_ems_gyro_eb2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          chest_ems_gyro_eb3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          chest_ems_gyro_eb4:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          head:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          head_imu_0:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_ankle_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_ankle_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_arm_ft:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_elbow_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_foot:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_foot_dh_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_foot_ft:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_foot_ft_gyro_3b13:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_forearm_dh_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_0:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_10:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_11:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_12:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_13:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_14:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_15:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_16:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_17:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_19:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_22:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_24:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_25:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_28:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_29:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_4:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_5:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_6:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_7:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_8:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_9:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_hand:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_hand_dh_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_hip_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_hip_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_hip_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_leg_ft:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_lower_leg:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_lower_leg_ems_gyro_eb7:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_shoulder_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_shoulder_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_shoulder_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_sole:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_0:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_10:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_11:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_12:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_13:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_14:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_15:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_17:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_18:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_19:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_20:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_21:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_22:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_24:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_25:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_26:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_27:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_28:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_29:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_4:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_8:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_9:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_upper_arm:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_upper_leg:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_upper_leg_back_contact:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_upper_leg_dh_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_upper_leg_ems_gyro_eb10:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_upper_leg_ems_gyro_eb6:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_upper_leg_ft_gyro_3b12:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_wrist_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          neck_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          neck_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_ankle_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_ankle_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_arm_ft:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_elbow_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_foot:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_foot_dh_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_foot_ft:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_foot_ft_gyro_3b14:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_forearm_dh_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_0:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_10:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_11:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_12:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_13:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_14:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_15:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_16:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_17:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_19:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_22:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_24:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_25:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_28:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_29:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_4:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_5:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_6:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_7:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_8:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_9:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_hand:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_hand_dh_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_hip_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_hip_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_hip_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_leg_ft:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_lower_leg_ems_gyro_eb9:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_0:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_10:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_11:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_14:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_15:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_16:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_17:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_19:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_20:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_21:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_28:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_29:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_31:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_32:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_35:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_36:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_37:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_38:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_4:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_41:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_42:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_43:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_46:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_47:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_49:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_5:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_50:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_51:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_52:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_53:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_54:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_55:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_56:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_6:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_60:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_61:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_9:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_shoulder_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_shoulder_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_shoulder_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_sole:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_0:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_10:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_11:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_12:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_13:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_14:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_15:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_17:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_18:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_19:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_20:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_21:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_22:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_24:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_25:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_26:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_27:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_28:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_29:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_4:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_8:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_9:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_upper_arm:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_upper_leg:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_upper_leg_back_contact:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_upper_leg_dh_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_upper_leg_ems_gyro_eb11:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_upper_leg_ems_gyro_eb8:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_upper_leg_ft_gyro_3b11:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_wrist_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          root_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          root_link_ems_gyro_eb5:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          torso_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          torso_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
         Loop Animation: false
-        State Display Time: 0.05 s
+        Robot Alpha: 0.5
+        Robot Color: 150; 50; 150
+        Show Robot Collision: false
         Show Robot Visual: false
+        Show Trail: false
+        State Display Time: 0.05 s
+        Trail Step Size: 1
         Trajectory Topic: display_planned_path
+        Use Sim Time: false
+      Planning Metrics:
+        Payload: 1
+        Show Joint Torques: false
+        Show Manipulability: false
+        Show Manipulability Index: false
+        Show Weight Limit: false
+        TextHeight: 0.07999999821186066
+      Planning Request:
+        Colliding Link Color: 255; 0; 0
+        Goal State Alpha: 1
+        Goal State Color: 250; 128; 0
+        Interactive Marker Size: 0
+        Joint Violation Color: 255; 0; 255
+        Planning Group: head
+        Query Goal State: true
+        Query Start State: false
+        Show Workspace: false
+        Start State Alpha: 1
+        Start State Color: 0; 255; 0
       Planning Scene Topic: monitored_planning_scene
       Robot Description: robot_description
       Scene Geometry:
         Scene Alpha: 1
+        Scene Color: 50; 230; 50
+        Scene Display Time: 0.009999999776482582
+        Show Scene Geometry: true
+        Voxel Coloring: Z-Axis
+        Voxel Rendering: Occupied Voxels
       Scene Robot:
+        Attached Body Color: 150; 50; 150
+        Links:
+          All Links Enabled: true
+          Expand Joint Details: false
+          Expand Link Details: false
+          Expand Tree: false
+          Link Tree Style: Links in Alphabetic Order
+          base_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          chest:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          chest_ems_gyro_eb1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          chest_ems_gyro_eb2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          chest_ems_gyro_eb3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          chest_ems_gyro_eb4:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          head:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          head_imu_0:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_ankle_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_ankle_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_arm_ft:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_elbow_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_foot:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_foot_dh_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_foot_ft:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_foot_ft_gyro_3b13:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_forearm_dh_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_0:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_10:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_11:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_12:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_13:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_14:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_15:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_16:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_17:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_19:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_22:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_24:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_25:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_28:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_29:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_4:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_5:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_6:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_7:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_8:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_forearm_skin_9:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_hand:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_hand_dh_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_hip_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_hip_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_hip_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_leg_ft:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_lower_leg:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_lower_leg_ems_gyro_eb7:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_shoulder_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_shoulder_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_shoulder_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_sole:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_0:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_10:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_11:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_12:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_13:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_14:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_15:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_17:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_18:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_19:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_20:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_21:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_22:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_24:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_25:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_26:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_27:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_28:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_29:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_4:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_8:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_sole_skin_9:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_upper_arm:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_upper_leg:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          l_upper_leg_back_contact:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_upper_leg_dh_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_upper_leg_ems_gyro_eb10:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_upper_leg_ems_gyro_eb6:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_upper_leg_ft_gyro_3b12:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          l_wrist_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          neck_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          neck_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_ankle_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_ankle_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_arm_ft:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_elbow_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_foot:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_foot_dh_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_foot_ft:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_foot_ft_gyro_3b14:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_forearm_dh_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_0:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_10:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_11:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_12:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_13:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_14:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_15:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_16:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_17:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_19:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_22:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_24:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_25:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_28:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_29:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_4:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_5:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_6:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_7:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_8:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_forearm_skin_9:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_hand:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_hand_dh_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_hip_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_hip_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_hip_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_leg_ft:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_lower_leg_ems_gyro_eb9:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_0:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_10:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_11:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_14:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_15:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_16:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_17:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_19:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_20:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_21:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_28:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_29:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_31:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_32:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_35:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_36:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_37:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_38:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_4:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_41:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_42:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_43:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_46:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_47:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_49:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_5:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_50:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_51:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_52:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_53:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_54:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_55:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_56:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_6:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_60:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_61:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_lower_leg_skin_9:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_shoulder_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_shoulder_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_shoulder_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_sole:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_0:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_10:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_11:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_12:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_13:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_14:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_15:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_17:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_18:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_19:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_20:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_21:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_22:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_24:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_25:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_26:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_27:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_28:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_29:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_4:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_8:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_sole_skin_9:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_upper_arm:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_upper_leg:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          r_upper_leg_back_contact:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_upper_leg_dh_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_upper_leg_ems_gyro_eb11:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_upper_leg_ems_gyro_eb8:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_upper_leg_ft_gyro_3b11:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          r_wrist_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          root_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          root_link_ems_gyro_eb5:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          torso_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          torso_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
         Robot Alpha: 0.5
+        Show Robot Collision: false
+        Show Robot Visual: true
       Value: true
+      Velocity_Scaling_Factor: 0.1
+  Enabled: true
   Global Options:
+    Background Color: 48; 48; 48
     Fixed Frame: root_link
+    Frame Rate: 30
+  Name: root
   Tools:
     - Class: rviz_default_plugins/Interact
+      Hide Inactive Objects: true
     - Class: rviz_default_plugins/MoveCamera
     - Class: rviz_default_plugins/Select
+  Transformation:
+    Current:
+      Class: rviz_default_plugins/TF
   Value: true
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 2.0
+      Distance: 2
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.05999999865889549
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
       Focal Point:
-        X: -0.1
+        X: -0.10000000149011612
         Y: 0.25
-        Z: 0.30
+        Z: 0.30000001192092896
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.05000000074505806
+      Invert Z Axis: false
       Name: Current View
-      Pitch: 0.5
+      Near Clip Distance: 0.009999999776482582
+      Pitch: 0.12500008940696716
       Target Frame: root_link
-      Yaw: -0.623
+      Value: Orbit (rviz_default_plugins)
+      Yaw: 3.220193386077881
+    Saved: ~
 Window Geometry:
-  Height: 975
-  QMainWindow State: 000000ff00000000fd0000000100000000000002b400000375fc0200000005fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000004100fffffffb000000100044006900730070006c006100790073010000003d00000123000000c900fffffffb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e00670100000166000001910000018800fffffffb0000000800480065006c0070000000029a0000006e0000006e00fffffffb0000000a0056006900650077007301000002fd000000b5000000a400ffffff000001f60000037500000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
-  Width: 1200
+  Displays:
+    collapsed: false
+  Height: 1136
+  Help:
+    collapsed: false
+  Hide Left Dock: false
+  Hide Right Dock: false
+  MotionPlanning:
+    collapsed: false
+  MotionPlanning - Trajectory Slider:
+    collapsed: false
+  QMainWindow State: 000000ff00000000fd0000000100000000000002b400000416fc0200000006fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000004100fffffffb000000100044006900730070006c006100790073010000003d0000018e000000c900fffffffb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e006701000001d1000002230000017d00fffffffb0000000800480065006c0070000000029a0000006e0000006e00fffffffb0000000a0056006900650077007301000002fd000000b50000000000000000fb00000024005200760069007a00560069007300750061006c0054006f006f006c007300470075006901000003fa000000590000004100ffffff0000047e0000041600000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  RvizVisualToolsGui:
+    collapsed: false
+  Width: 1848
+  X: 72
+  Y: 27

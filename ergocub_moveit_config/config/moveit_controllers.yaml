@@ -9,7 +9,7 @@ controller_names:
   - right_leg_controller
   - head_controller
   - torso_controller
-  - left_arm_torso_controller
+  - right_arm_torso_controller
 
 left_arm_controller:
   type: FollowJointTrajectory
@@ -77,7 +77,7 @@ torso_controller:
     - torso_pitch
     - torso_roll
     - torso_yaw
-left_arm_torso_controller:
+right_arm_torso_controller:
   type: FollowJointTrajectory
   action_ns: follow_joint_trajectory
   default: true
@@ -85,10 +85,10 @@ left_arm_torso_controller:
     - torso_roll
     - torso_pitch
     - torso_yaw
-    - l_shoulder_pitch
-    - l_shoulder_roll
-    - l_shoulder_yaw
-    - l_elbow
-    - l_wrist_yaw
-    - l_wrist_roll
-    - l_wrist_pitch
+    - r_shoulder_pitch
+    - r_shoulder_roll
+    - r_shoulder_yaw
+    - r_elbow
+    - r_wrist_yaw
+    - r_wrist_roll
+    - r_wrist_pitch
