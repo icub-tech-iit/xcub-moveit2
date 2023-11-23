@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(test_solver)
+project(test_controller)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -18,7 +18,7 @@ find_package(hardware_interface REQUIRED)
 find_package(yarp_control_msgs REQUIRED)
 find_package(YARP REQUIRED)
 
-add_executable(${PROJECT_NAME} src/test_solver.cpp)
+add_executable(${PROJECT_NAME} src/test_controller.cpp)
 target_include_directories(${PROJECT_NAME} PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
@@ -35,7 +35,7 @@ ament_target_dependencies(
   "hardware_interface"
 )
 
-target_sources(test_solver PRIVATE src/test_solver.cpp)
+target_sources(test_controller PRIVATE src/test_controller.cpp)
 target_link_libraries(${PROJECT_NAME} ${YARP_LIBRARIES})
 
 install(TARGETS ${PROJECT_NAME} DESTINATION lib/${PROJECT_NAME})

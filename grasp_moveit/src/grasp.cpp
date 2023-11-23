@@ -118,8 +118,17 @@ int main(int argc, char** argv)
   visual_tools.deleteAllMarkers();
   visual_tools.trigger();
 
-  move_group.setJointValueTarget(joint_values); 
-  move_group.move();
+  // move_group.setJointValueTarget(joint_values); 
+  // move_group.move();
+
+  waypoints3.clear();
+  rclcpp::sleep_for(std::chrono::milliseconds(1s));
+
+  waypoints3.push_back(start_pose);
+  moveit_msgs::msg::RobotTrajectory inv_trajectory;
+  double fraction = move_group.computeCartesianPath(waypoints3, eef_step, jump_threshold, inv_trajectory, avoid_collisions);
+  RCLCPP_INFO(LOGGER, "Cartesian path: %.2f%% achieved", fraction * 100.0);
+  move_group.execute(inv_trajectory);
   
   rclcpp::shutdown();
   return 0;
