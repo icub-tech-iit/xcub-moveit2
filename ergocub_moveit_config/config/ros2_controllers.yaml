@@ -27,7 +27,7 @@ controller_manager:
       type: joint_trajectory_controller/JointTrajectoryController
 
 
-    left_arm_torso_controller:
+    right_arm_torso_controller:
       type: joint_trajectory_controller/JointTrajectoryController
 
 
@@ -114,19 +114,19 @@ torso_controller:
     state_interfaces:
       - position
       - velocity
-left_arm_torso_controller:
+right_arm_torso_controller:
   ros__parameters:
     joints:
       - torso_roll
       - torso_pitch
       - torso_yaw
-      - l_shoulder_pitch
-      - l_shoulder_roll
-      - l_shoulder_yaw
-      - l_elbow
-      - l_wrist_yaw
-      - l_wrist_roll
-      - l_wrist_pitch
+      - r_shoulder_pitch
+      - r_shoulder_roll
+      - r_shoulder_yaw
+      - r_elbow
+      - r_wrist_yaw
+      - r_wrist_roll
+      - r_wrist_pitch
     command_interfaces:
       - position
     state_interfaces:

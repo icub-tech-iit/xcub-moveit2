@@ -7,4 +7,19 @@ moveit_setup_assistant_config:
   package_settings:
     author_name: Martina Gloria
     author_email: martina.gloria@iit.it
-    generated_timestamp: 1695734298
+    generated_timestamp: 1699889574
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity

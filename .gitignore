@@ -1,5 +1,5 @@
 .vscode/
-*.setup_assistant
+*/.setup_assistant
 log/
 install/
 build/

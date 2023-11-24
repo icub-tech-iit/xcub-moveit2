@@ -5,6 +5,16 @@ from launch import LaunchDescription
 from launch_ros.actions import Node
 from moveit_configs_utils import MoveItConfigsBuilder
 
+def check_robot_name():
+    try:
+        if "icub" in os.environ["YARP_ROBOT_NAME"].casefold():
+            yarp_robot_name = "icub"
+        elif "ergocub" in os.environ["YARP_ROBOT_NAME"].casefold():
+            yarp_robot_name = "ergocub"
+        return yarp_robot_name
+    except Exception as e:
+        print(f"Caught exception: env variable {e} is not set, please provide it.")
+
 def load_file(package_name, file_path):
     package_path = get_package_share_directory(package_name)
     absolute_file_path = os.path.join(package_path, file_path)
@@ -22,10 +32,10 @@ def load_yaml(package_name, file_path):
             return yaml.safe_load(file)
     except EnvironmentError:
         return None
-
-robot_name = os.environ["YARP_ROBOT_NAME"]
     
 def generate_launch_description():
+
+    robot_name = check_robot_name()
 
     moveit_config = (
         MoveItConfigsBuilder(robot_name)

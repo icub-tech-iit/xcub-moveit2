@@ -19,10 +19,10 @@ def generate_launch_description():
 
     moveit_config = MoveItConfigsBuilder(robot_name).to_moveit_configs()
 
-    circle_demo = Node(
-        name="robot_moveit",
-        package="robot_moveit",
-        executable="robot_moveit",
+    test_controller_node = Node(
+        name="test_controller",
+        package="test_controller",
+        executable="test_controller",
         output="screen",
         parameters=[
             moveit_config.robot_description,
@@ -33,5 +33,5 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        circle_demo
+        test_controller_node
     ])

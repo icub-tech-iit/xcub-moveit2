@@ -135,7 +135,7 @@ It contains the same information described in the previous paragraph, but custom
 
 ## Use case
 
-As described in the previous section, this repository contains two demos that shows the possibility to control a yarp-based robot within the MoveIt2 framework in the Cartesian space. First of all, make sure that `yarpserver` is running on your machine. Then, you can start launching a basic simulation:
+As described in the previous section, this repository contains two demos that show the possibility to control a yarp-based robot within the MoveIt2 framework in the Cartesian space. First of all, make sure that `yarpserver` is running on your machine. Then, you can start launching a basic simulation:
 
 ```shell
 # Build the packages within your ros2 workspace
@@ -179,7 +179,7 @@ source install/setup.bash
 export YARP_ROBOT_NAME="icub"
 
 # For the grasping demo
-ros2 launch grasp_moveit grasp_demo.launch.py
+ros2 launch robot_moveit grasp_demo.launch.py
 ```
 
 If you want to see iCub performing a circle movement, instead of the last line, you can run:
@@ -191,5 +191,6 @@ ros2 launch robot_moveit circle_demo.launch.py
 and follow the instructions on the third shell you opened.
 You should have something like this:
 
-<video src="assets/circle.mp4" controls title="circle_demo">
-</video>
+<div align="center">
+  <video src="assets/circle.mp4" width="1000">
+</div>
