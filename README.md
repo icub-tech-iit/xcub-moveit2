@@ -5,6 +5,11 @@ study-moveit
     <img src="assets/rviz_gazebo_icub.png"/>
 </div>
 
+## Maintainer
+
+| | |
+|:---:|:---:|
+| [<img src="https://github.com/martinaxgloria.png" width="40">](https://github.com/martinaxgloria) | [@martinaxgloria](https://github.com/martinaxgloria) |
 
 ## Overview
 
@@ -132,6 +137,10 @@ This package contains the configuration files to make iCub working with MoveIt2.
 ### ergocub_moveit_config
 
 It contains the same information described in the previous paragraph, but customized with ergoCub specs.
+
+## Controller perfomance
+
+A detailed report about the controller performance can be found [here](https://github.com/icub-tech-iit/study-moveit/blob/master/test_controller/report.md#test-on-the-controller-performance) 📝
 
 ## Use case
 
