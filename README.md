@@ -124,7 +124,7 @@ This package contains some launch files, depending on the nodes you want to run.
 - **`circle_demo.launch.py`** and **`grasp_demo.launch.py`**: as the name suggests, they are two examples of commanding the robot in the cartesian space using `torso + right_arm` as planning group.
 
 
-Before running the nodes, set the `YARP_ROBOT_NAME` environment variable for each shell according to the chosen model (i.e. `icub` or `ergocub`):
+Before running the nodes, make sure that your environment variable `YARP_ROBOT_NAME` is properly set with the name of your robot. If not, set it for each shell according to the chosen model, for example:
 
 ```shell
 export YARP_ROBOT_NAME="icub"
@@ -138,11 +138,15 @@ This package contains the configuration files to make iCub working with MoveIt2.
 
 It contains the same information described in the previous paragraph, but customized with ergoCub specs.
 
-## Controller perfomance
+### test_controller
 
-A detailed report about the controller performance can be found [here](https://github.com/icub-tech-iit/study-moveit/blob/master/test_controller/report.md#test-on-the-controller-performance) 📝
+In this folder, a test to sample the reaching space is available. It can be run as a ros2 node with the provided launch file called `test_controller.launch.py`. For this purpose, you can find more info in the [Use case](#use-case) paragraph above.
+
+Moreover, a detailed report about the controller performance can be found [here](https://github.com/icub-tech-iit/study-moveit/blob/master/test_controller/README.md#test-on-the-controller-performance) 📝.
 
 ## Use case
+
+### Run the demos
 
 As described in the previous section, this repository contains two demos that show the possibility to control a yarp-based robot within the MoveIt2 framework in the Cartesian space. First of all, make sure that `yarpserver` is running on your machine. Then, you can start launching a basic simulation:
 
@@ -152,6 +156,8 @@ cd ~/<ros2_ws>
 source /opt/ros/humble/setup.bash 
 colcon build
 source install/setup.bash
+
+# Remember to check if your robot name variable is set. If not:
 export YARP_ROBOT_NAME="icub"
 
 # Launch the start-up nodes
@@ -188,7 +194,7 @@ source install/setup.bash
 export YARP_ROBOT_NAME="icub"
 
 # For the grasping demo
-ros2 launch robot_moveit grasp_demo.launch.py
+ros2 launch grasp_moveit grasp_demo.launch.py
 ```
 
 If you want to see iCub performing a circle movement, instead of the last line, you can run:
@@ -200,6 +206,15 @@ ros2 launch robot_moveit circle_demo.launch.py
 and follow the instructions on the third shell you opened.
 You should have something like this:
 
-<div align="center">
-  <video src="assets/circle.mp4" width="1000">
-</div>
+<video src="assets/circle.mp4" controls title="Demos"></video>
+
+
+### Controller performance
+
+If you want to test the ros2_control `robot_controller` performance, you can rely to the `test_controller` package. It contains a simple script to sample the reaching space in front of iCub model. To run the simulation, please follow the first two steps described in the [Run the demos](#run-the-demos) section. After that, open another shell, source your workspace and then launch:
+
+```shell
+ros2 launch test_controller test_controller.launch.py
+```
+
+In this way, the test will start and the acquired data in terms of ideal and real poses are saved in two separated files in your current directory. Finally, you can plot them using the Matlab scripts provided in the `utils` folder.
