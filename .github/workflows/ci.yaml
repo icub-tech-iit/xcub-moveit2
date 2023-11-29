@@ -2,6 +2,8 @@ name: CI workflow
 
 on:
   pull_request:
+    branches:
+      - master
   push:
     branches: 
       - master
@@ -9,12 +11,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: true
+      fail-fast: false
     steps:
-      - name: Prepare
-        run: |
-          mkdir -p ${{github.workspace}}/src
-
       - uses: actions/checkout@v2
         with:
           path: src/study-moveit
@@ -30,9 +28,13 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           image: study-moveit:latest
-          options: -v ${{github.workspace}}/:/ros/
+          options: -v ${{github.workspace}}/:/ros2_ws/
           run: |
-              cd /ros
+              cd ros2_ws
               . /opt/ros/humble/setup.sh
-              colcon build
-              . install/setup.sh
+              if colcon build; then 
+                . install/setup.sh
+              else
+                echo "Compilation failed"
+                exit 1
+              fi
