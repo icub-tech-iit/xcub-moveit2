@@ -15,19 +15,19 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          path: src/study-moveit
+          path: src/xcub-moveit2
 
       - name: Build Docker Image
         uses: docker/build-push-action@v2
         with:
-          tags: study-moveit:latest
+          tags: xcub-moveit2:latest
           file: Dockerfile
           push: false
 
       - name: Build ros2 packages
         uses: addnab/docker-run-action@v3
         with:
-          image: study-moveit:latest
+          image: xcub-moveit2:latest
           options: -v ${{github.workspace}}/:/ros2_ws/
           run: |
               cd ros2_ws

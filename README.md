@@ -1,4 +1,4 @@
-study-moveit
+xcub-moveit2
 =============
 
 <div align = "center">
@@ -72,7 +72,7 @@ In your ROS2 workspace, clone the repo:
 
 ```shell
 cd ~/<ros2_ws>/src
-git clone https://github.com/icub-tech-iit/study-moveit
+git clone https://github.com/icub-tech-iit/xcub-moveit2
 ```
 
 and then build the environment:
@@ -95,7 +95,7 @@ If you want to control a yarp-based robot (like iCub) using the proposed framewo
 - export this configuration file in the `.bashrc` in order to be used by `Cyclone DDS`:
 
 ```
-export CYCLONEDDS_URI=/<path/to/your/ros2_ws>/src/study-moveit/cyclonedds.xml
+export CYCLONEDDS_URI=/<path/to/your/ros2_ws>/src/xcub-moveit2/cyclonedds.xml
 ```
 - repeat the last two steps on the robot machine, changing the ip address accordingly.
 
@@ -142,7 +142,7 @@ It contains the same information described in the previous paragraph, but custom
 
 In this folder, a test to sample the reaching space is available. It can be run as a ros2 node with the provided launch file called `test_controller.launch.py`. For this purpose, you can find more info in the [Use case](#use-case) paragraph above.
 
-Moreover, a detailed report about the controller performance can be found [here](https://github.com/icub-tech-iit/study-moveit/blob/master/test_controller/README.md#test-on-the-controller-performance) 📝.
+Moreover, a detailed report about the controller performance can be found [here](https://github.com/icub-tech-iit/xcub-moveit2/blob/master/test_controller/README.md#test-on-the-controller-performance) 📝.
 
 ## Use case
 
