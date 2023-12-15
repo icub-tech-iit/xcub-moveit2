@@ -194,7 +194,7 @@ source install/setup.bash
 export YARP_ROBOT_NAME="icub"
 
 # For the grasping demo
-ros2 launch grasp_moveit grasp_demo.launch.py
+ros2 launch robot_moveit grasp_demo.launch.py
 ```
 
 If you want to see iCub performing a circle movement, instead of the last line, you can run:
