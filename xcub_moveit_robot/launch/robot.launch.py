@@ -38,7 +38,7 @@ def generate_launch_description():
     robot_name = check_robot_name()
 
     moveit_config = (
-        MoveItConfigsBuilder("xcub_"+robot_name)
+        MoveItConfigsBuilder(robot_name)
         .robot_description(file_path="config/"+robot_name+".urdf.xacro")
         .robot_description_semantic(file_path="config/"+robot_name+".srdf")
         .robot_description_kinematics(file_path="config/kinematics.yaml")
@@ -56,7 +56,7 @@ def generate_launch_description():
                     {"use_sim_time": False}],
     )
 
-    robot_description_semantic_file = load_file("xcub_"+robot_name+"_moveit_config", "config/"+robot_name+".srdf")
+    robot_description_semantic_file = load_file(robot_name+"_moveit_config", "config/"+robot_name+".srdf")
     robot_description_semantic = {"robot_description_semantic": robot_description_semantic_file}
 
     ompl_planning_pipeline_config = {
@@ -66,10 +66,10 @@ def generate_launch_description():
             "start_state_max_bounds_error": 0.1,
         }
     }
-    ompl_planning_file = load_yaml("xcub_"+robot_name+"_moveit_config", "config/ompl_planning.yaml")
+    ompl_planning_file = load_yaml(robot_name+"_moveit_config", "config/ompl_planning.yaml")
     ompl_planning_pipeline_config["move_group"].update(ompl_planning_file)
 
-    moveit_controllers_file = load_yaml("xcub_"+robot_name+"_moveit_config", "config/moveit_controllers.yaml")
+    moveit_controllers_file = load_yaml(robot_name+"_moveit_config", "config/moveit_controllers.yaml")
     moveit_controllers = {"moveit_simple_controller_manager": moveit_controllers_file,
                           "moveit_controller_manager": "moveit_simple_controller_manager/MoveItSimpleControllerManager"}
     
@@ -107,7 +107,7 @@ def generate_launch_description():
                     {"use_sim_time": False}],
     )
 
-    rviz_moveit = os.path.join(get_package_share_directory("xcub_"+robot_name+"_moveit_config"), "config/moveit.rviz")
+    rviz_moveit = os.path.join(get_package_share_directory(robot_name+"_moveit_config"), "config/moveit.rviz")
     rviz2 = Node(
         package="rviz2",
         executable="rviz2",

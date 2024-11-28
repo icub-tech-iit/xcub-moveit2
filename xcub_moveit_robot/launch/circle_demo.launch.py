@@ -17,7 +17,7 @@ def generate_launch_description():
 
     robot_name = check_robot_name()
 
-    moveit_config = MoveItConfigsBuilder("xcub_"+robot_name).to_moveit_configs()
+    moveit_config = MoveItConfigsBuilder(robot_name).to_moveit_configs()
 
     circle_demo = Node(
         name="xcub_moveit_robot",

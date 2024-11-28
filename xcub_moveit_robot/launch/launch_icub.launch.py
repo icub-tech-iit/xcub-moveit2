@@ -35,7 +35,7 @@ def generate_launch_description():
     )
 
     rviz2 = ExecuteProcess(
-        cmd=['ros2', 'launch', 'xcub_icub_moveit_config', 'moveit_rviz.launch.py'],
+        cmd=['ros2', 'launch', 'icub_moveit_config', 'moveit_rviz.launch.py'],
         output='screen'
     )
     
@@ -67,7 +67,7 @@ def generate_launch_description():
     )
 
     ros2_controllers_path = os.path.join(
-        get_package_share_directory("xcub_icub_moveit_config"),
+        get_package_share_directory("icub_moveit_config"),
         "config",
         "ros2_controllers.yaml",
     )

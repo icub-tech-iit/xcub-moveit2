@@ -152,11 +152,11 @@ or, for simulated models:
 export YARP_ROBOT_NAME="iCubGazeboV2_5"
 ```
 
-### xcub_icub_moveit_config
+### icub_moveit_config
 
 This package contains the configuration files to make iCub working with MoveIt2. In particular, each of the parts of iCub robot (head, left_arm, right_arm, torso, left_leg and right_leg) are defined in terms of `planning group`, and for each of them a ros2_control of type `FollowJointTrajectory` is set.
 
-### xcub_ergocub_moveit_config
+### ergocub_moveit_config
 
 It contains the same information described in the previous paragraph, but customized with ergoCub specs.
 

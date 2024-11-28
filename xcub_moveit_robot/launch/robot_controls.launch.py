@@ -21,10 +21,10 @@ def generate_launch_description():
 
     robot_name = check_robot_name()
 
-    moveit_config = MoveItConfigsBuilder("xcub_"+robot_name).to_moveit_configs()
+    moveit_config = MoveItConfigsBuilder(robot_name).to_moveit_configs()
 
     ros2_controllers_path = os.path.join(
-        get_package_share_directory("xcub_"+robot_name+"_moveit_config"),
+        get_package_share_directory(robot_name+"_moveit_config"),
         "config",
         "ros2_controllers.yaml",
     )

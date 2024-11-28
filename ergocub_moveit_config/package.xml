@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>xcub_ergocub_moveit_config</name>
+  <name>ergocub_moveit_config</name>
   <version>0.3.0</version>
   <description>
      A ROS2 package with the configuration and launch files for using the ergoCub with the MoveIt Motion Planning Framework

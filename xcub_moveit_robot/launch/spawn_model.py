@@ -13,7 +13,7 @@ def main(args=None):
 
     robot_name = os.environ["YARP_ROBOT_NAME"]
 
-    xacro_file = os.path.join(get_package_share_directory('xcub_'+robot_name+'_moveit_config'), 'config', robot_name+'.urdf.xacro')
+    xacro_file = os.path.join(get_package_share_directory(robot_name+'_moveit_config'), 'config', robot_name+'.urdf.xacro')
     assert os.path.exists(xacro_file)
     robot_desc = xacro.process_file(xacro_file)
     robot_model = robot_desc.toprettyxml()
