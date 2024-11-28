@@ -9,9 +9,9 @@ project(xcub-moveit2)
 
 # The order of inclusion was taken from colcon graph output
 add_subdirectory(../xcub_ergocub_moveit_config ${CMAKE_CURRENT_BINARY_DIR}/xcub_ergocub_moveit_config)
-add_subdirectory(../xcub_grasp ${CMAKE_CURRENT_BINARY_DIR}/xcub_grasp)
+add_subdirectory(../xcub_moveit_grasp ${CMAKE_CURRENT_BINARY_DIR}/xcub_moveit_grasp)
 add_subdirectory(../xcub_icub_moveit_config ${CMAKE_CURRENT_BINARY_DIR}/xcub_icub_moveit_config)
 add_subdirectory(../xcub_ros2_controllers ${CMAKE_CURRENT_BINARY_DIR}/xcub_ros2_controllers)
-add_subdirectory(../xcub_robot ${CMAKE_CURRENT_BINARY_DIR}/xcub_robot)
+add_subdirectory(../xcub_moveit_robot ${CMAKE_CURRENT_BINARY_DIR}/xcub_moveit_robot)
 add_subdirectory(../xcub_moveit_test_controller ${CMAKE_CURRENT_BINARY_DIR}/xcub_moveit_test_controller)
 

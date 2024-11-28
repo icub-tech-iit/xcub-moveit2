@@ -54,7 +54,7 @@ def generate_launch_description():
     )
 
     model_spawner = Node(
-        package='xcub_robot', 
+        package='xcub_moveit_robot', 
         executable='spawn_model.py', 
         name='spawn_entity', 
         output='screen', 

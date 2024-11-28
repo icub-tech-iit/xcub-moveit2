@@ -19,10 +19,10 @@ def generate_launch_description():
 
     moveit_config = MoveItConfigsBuilder("xcub_"+robot_name).to_moveit_configs()
 
-    grasping_demo = Node(
-        name="grasping",
-        package="xcub_grasp",
-        executable="xcub_grasp",
+    circle_demo = Node(
+        name="xcub_moveit_robot",
+        package="xcub_moveit_robot",
+        executable="xcub_moveit_robot",
         output="screen",
         parameters=[
             moveit_config.robot_description,
@@ -33,5 +33,5 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        grasping_demo
+        circle_demo
     ])

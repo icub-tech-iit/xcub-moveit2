@@ -131,7 +131,7 @@ This package contains `xcub_ros2_controllers` plugin that is used in [ros2_contr
 - a `velocity state interface` used to read the velocity of each joint;
 - a `position command interface` used to forward the desired position to the joints.
 
-### xcub_robot
+### xcub_moveit_robot
 
 This package contains some launch files, depending on the nodes you want to run.
 
@@ -183,7 +183,7 @@ source install/setup.bash
 export YARP_ROBOT_NAME="iCubGazeboV2_5"
 
 # Launch the start-up nodes
-ros2 launch xcub_robot robot_sim.launch.py
+ros2 launch xcub_moveit_robot robot_sim.launch.py
 ```
 
 In this way, both rviz2 and gazebo windows are opened with the iCub model spawned in the two environments. At this point, open another shell, build and source the enviroment and then launch the ros2_control nodes:
@@ -196,7 +196,7 @@ source install/setup.bash
 export YARP_ROBOT_NAME="iCubGazeboV2_5"
 
 # Launch the ros2_control nodes
-ros2 launch xcub_robot robot_controls.launch.py
+ros2 launch xcub_moveit_robot robot_controls.launch.py
 ```
 
 To verify that everthing has been done successfully, you can run in a separate shell:
@@ -216,13 +216,13 @@ source install/setup.bash
 export YARP_ROBOT_NAME="iCubGazeboV2_5"
 
 # For the grasping demo
-ros2 launch xcub_robot grasp_demo.launch.py
+ros2 launch xcub_moveit_robot grasp_demo.launch.py
 ```
 
 If you want to see iCub performing a circle movement, instead of the last line, you can run:
 
 ```shell
-ros2 launch xcub_robot circle_demo.launch.py
+ros2 launch xcub_moveit_robot circle_demo.launch.py
 ```
 
 and follow the instructions on the third shell you opened.

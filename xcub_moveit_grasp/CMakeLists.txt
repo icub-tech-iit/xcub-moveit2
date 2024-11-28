@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(xcub_robot)
+project(xcub_moveit_grasp)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -18,13 +18,13 @@ find_package(hardware_interface REQUIRED)
 find_package(yarp_control_msgs REQUIRED)
 find_package(YARP REQUIRED)
 
-add_executable(xcub_robot src/robot_moveit.cpp launch/spawn_model.py)
-target_include_directories(xcub_robot PUBLIC
+add_executable(${PROJECT_NAME} src/grasp.cpp)
+target_include_directories(${PROJECT_NAME} PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
-target_compile_features(xcub_robot PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+target_compile_features(${PROJECT_NAME} PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 ament_target_dependencies(
-  xcub_robot
+  ${PROJECT_NAME}
   "moveit_ros_planning_interface"
   "rclcpp"
   "rclpy"
@@ -35,12 +35,10 @@ ament_target_dependencies(
   "hardware_interface"
 )
 
-target_sources(${PROJECT_NAME} PRIVATE src/robot_moveit.cpp)
+target_sources(${PROJECT_NAME} PRIVATE src/grasp.cpp)
 target_link_libraries(${PROJECT_NAME} ${YARP_LIBRARIES})
 
-install(TARGETS xcub_robot DESTINATION lib/${PROJECT_NAME})
-install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
-install(PROGRAMS launch/spawn_model.py DESTINATION lib/${PROJECT_NAME})
+install(TARGETS ${PROJECT_NAME} DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
