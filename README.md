@@ -88,11 +88,11 @@ source install/setup.bash
 
 ### Install as a single CMake project
 
-If you want to build this repository as a single CMake project, you can use the `CMakeLists.txt` provided in `xcub_all_packages`:
+If you want to build this repository as a single CMake project, you can use the `CMakeLists.txt` provided in `xcub_moveit_all_packages`:
 
 ~~~shell
 git clone https://github.com/icub-tech-iit/xcub-moveit2/
-cd xcub-moveit2/xcub_all_packages
+cd xcub-moveit2/xcub_moveit_all_packages
 cmake -Bbuild -S. -DCMAKE_INSTALL_PREFIX=<install_prefix>
 cmake --build build
 cmake --install build
