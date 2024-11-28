@@ -8,10 +8,10 @@ project(xcub-moveit2)
 # so that it will be excluded automatically by the colcon build command
 
 # The order of inclusion was taken from colcon graph output
-add_subdirectory(../ergocub_moveit_config ${CMAKE_CURRENT_BINARY_DIR}/ergocub_moveit_config)
-add_subdirectory(../grasp_moveit ${CMAKE_CURRENT_BINARY_DIR}/grasp_moveit)
-add_subdirectory(../icub_moveit_config ${CMAKE_CURRENT_BINARY_DIR}/icub_moveit_config)
-add_subdirectory(../robot_controller ${CMAKE_CURRENT_BINARY_DIR}/robot_controller)
-add_subdirectory(../robot_moveit ${CMAKE_CURRENT_BINARY_DIR}/robot_moveit)
-add_subdirectory(../test_controller ${CMAKE_CURRENT_BINARY_DIR}/test_controller)
+add_subdirectory(../xcub_ergocub_moveit_config ${CMAKE_CURRENT_BINARY_DIR}/xcub_ergocub_moveit_config)
+add_subdirectory(../xcub_grasp ${CMAKE_CURRENT_BINARY_DIR}/xcub_grasp)
+add_subdirectory(../xcub_icub_moveit_config ${CMAKE_CURRENT_BINARY_DIR}/xcub_icub_moveit_config)
+add_subdirectory(../xcub_ros2_controllers ${CMAKE_CURRENT_BINARY_DIR}/xcub_ros2_controllers)
+add_subdirectory(../xcub_robot ${CMAKE_CURRENT_BINARY_DIR}/xcub_robot)
+add_subdirectory(../xcub_moveit_test_controller ${CMAKE_CURRENT_BINARY_DIR}/xcub_moveit_test_controller)
 

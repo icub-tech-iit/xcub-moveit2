@@ -1,9 +1,0 @@
-<library path="robot_controller">
-    <class name="robot_controller/RobotController"
-            type="robot_controller::RobotController"
-            base_class_type="hardware_interface::SystemInterface">
-        <description>
-            First ros2 controller for iCub and ergoCub
-        </description>
-    </class>
-</library>
