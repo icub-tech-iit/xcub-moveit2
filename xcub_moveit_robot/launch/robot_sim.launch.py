@@ -43,7 +43,7 @@ def generate_launch_description():
         PythonLaunchDescriptionSource([os.path.join(get_package_share_directory('gazebo_ros'), 'launch'), '/gazebo.launch.py'])
     )
 
-    moveit_config = (
+    config = (
         MoveItConfigsBuilder(robot_name)
         .robot_description(file_path="config/"+robot_name+".urdf.xacro")
         .robot_description_semantic(file_path="config/"+robot_name+".srdf")
@@ -54,7 +54,7 @@ def generate_launch_description():
     )
 
     model_spawner = Node(
-        package='robot_moveit', 
+        package='xcub_moveit_robot', 
         executable='spawn_model.py', 
         name='spawn_entity', 
         output='screen', 
@@ -65,7 +65,7 @@ def generate_launch_description():
         executable="robot_state_publisher",
         name="robot_state_publisher",
         output="both",
-        parameters=[moveit_config.robot_description,
+        parameters=[config.robot_description,
                     {"use_sim_time": True}],
     )
 
@@ -108,9 +108,9 @@ def generate_launch_description():
         package="moveit_ros_move_group",
         executable="move_group",
         output="screen",
-        parameters=[moveit_config.robot_description,
+        parameters=[config.robot_description,
                     robot_description_semantic,
-                    moveit_config.robot_description_kinematics,
+                    config.robot_description_kinematics,
                     ompl_planning_pipeline_config,
                     moveit_controllers,
                     trajectory_execution,
@@ -126,10 +126,10 @@ def generate_launch_description():
         name="rviz2",
         output="log",
         arguments=["-d", rviz_moveit],
-        parameters=[moveit_config.robot_description, 
+        parameters=[config.robot_description, 
                     robot_description_semantic,
-                    moveit_config.robot_description_kinematics,
-                    moveit_config.planning_pipelines,
+                    config.robot_description_kinematics,
+                    config.planning_pipelines,
                     ompl_planning_pipeline_config,
                     planning_scene_monitor_parameters,
                     {"use_sim_time": True}]

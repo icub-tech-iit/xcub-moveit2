@@ -16,7 +16,7 @@
 
 using namespace std::chrono_literals;
 
-static const rclcpp::Logger LOGGER = rclcpp::get_logger("test_controller");
+static const rclcpp::Logger LOGGER = rclcpp::get_logger("xcub_test_controller");
 
 int main(int argc, char** argv)
 {

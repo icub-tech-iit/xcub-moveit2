@@ -21,8 +21,8 @@ def generate_launch_description():
 
     grasping_demo = Node(
         name="grasping",
-        package="grasp_moveit",
-        executable="grasp_moveit",
+        package="xcub_moveit_grasp",
+        executable="xcub_moveit_grasp",
         output="screen",
         parameters=[
             moveit_config.robot_description,

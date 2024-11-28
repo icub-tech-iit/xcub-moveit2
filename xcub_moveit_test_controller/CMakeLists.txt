@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(test_controller)
+project(xcub_moveit_test_controller)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -35,7 +35,7 @@ ament_target_dependencies(
   "hardware_interface"
 )
 
-target_sources(test_controller PRIVATE src/test_controller.cpp)
+target_sources(xcub_moveit_test_controller PRIVATE src/test_controller.cpp)
 target_link_libraries(${PROJECT_NAME} ${YARP_LIBRARIES})
 
 install(TARGETS ${PROJECT_NAME} DESTINATION lib/${PROJECT_NAME})

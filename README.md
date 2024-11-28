@@ -88,11 +88,11 @@ source install/setup.bash
 
 ### Install as a single CMake project
 
-If you want to build this repository as a single CMake project, you can use the `CMakeLists.txt` provided in `xcub_moveit2_all_packages`:
+If you want to build this repository as a single CMake project, you can use the `CMakeLists.txt` provided in `xcub_moveit_all_packages`:
 
 ~~~shell
 git clone https://github.com/icub-tech-iit/xcub-moveit2/
-cd xcub-moveit2/xcub_moveit2_all_packages
+cd xcub-moveit2/xcub_moveit_all_packages
 cmake -Bbuild -S. -DCMAKE_INSTALL_PREFIX=<install_prefix>
 cmake --build build
 cmake --install build
@@ -123,15 +123,15 @@ However, if you want to work in simulation instead of on the real hardware, you 
 
 This section aims to give a brief description of what each package contains.
 
-### robot_controller
+### xcub_ros2_controllers
 
-This package contains `robot_controller` plugin that is used in [ros2_control](https://control.ros.org/master/index.html) framework. It includes:
+This package contains `xcub_ros2_controllers` plugin that is used in [ros2_control](https://control.ros.org/master/index.html) framework. It includes:
 
 - a `position state interface` used to read the position of each joint;
 - a `velocity state interface` used to read the velocity of each joint;
 - a `position command interface` used to forward the desired position to the joints.
 
-### robot_moveit
+### xcub_moveit_robot
 
 This package contains some launch files, depending on the nodes you want to run.
 
@@ -140,11 +140,16 @@ This package contains some launch files, depending on the nodes you want to run.
 - **`robot_controls.launch.py`**: this launch file allows to run the `controller manager` node for ros2_control and the nodes for the single controllers (one for each part).
 - **`circle_demo.launch.py`** and **`grasp_demo.launch.py`**: as the name suggests, they are two examples of commanding the robot in the cartesian space using `torso + right_arm` as planning group.
 
-
 Before running the nodes, make sure that your environment variable `YARP_ROBOT_NAME` is properly set with the name of your robot. If not, set it for each shell according to the chosen model, for example:
 
 ```shell
-export YARP_ROBOT_NAME="icub"
+export YARP_ROBOT_NAME="iCubGenova11"
+```
+
+or, for simulated models:
+
+```shell
+export YARP_ROBOT_NAME="iCubGazeboV2_5"
 ```
 
 ### icub_moveit_config
@@ -155,11 +160,11 @@ This package contains the configuration files to make iCub working with MoveIt2.
 
 It contains the same information described in the previous paragraph, but customized with ergoCub specs.
 
-### test_controller
+### xcub_moveit_test_controller
 
 In this folder, a test to sample the reaching space is available. It can be run as a ros2 node with the provided launch file called `test_controller.launch.py`. For this purpose, you can find more info in the [Use case](#use-case) paragraph above.
 
-Moreover, a detailed report about the controller performance can be found [here](https://github.com/icub-tech-iit/xcub-moveit2/blob/master/test_controller/README.md#test-on-the-controller-performance) 📝.
+Moreover, a detailed report about the controller performance can be found [here](https://github.com/icub-tech-iit/xcub-moveit2/blob/master/xcub_test_controller/README.md#test-on-the-controller-performance) 📝.
 
 ## Use case
 
@@ -175,10 +180,10 @@ colcon build
 source install/setup.bash
 
 # Remember to check if your robot name variable is set. If not:
-export YARP_ROBOT_NAME="icub"
+export YARP_ROBOT_NAME="iCubGazeboV2_5"
 
 # Launch the start-up nodes
-ros2 launch robot_moveit robot_sim.launch.py
+ros2 launch xcub_moveit_robot robot_sim.launch.py
 ```
 
 In this way, both rviz2 and gazebo windows are opened with the iCub model spawned in the two environments. At this point, open another shell, build and source the enviroment and then launch the ros2_control nodes:
@@ -188,10 +193,10 @@ cd ~/<ros2_ws>
 source /opt/ros/humble/setup.bash 
 colcon build
 source install/setup.bash
-export YARP_ROBOT_NAME="icub"
+export YARP_ROBOT_NAME="iCubGazeboV2_5"
 
 # Launch the ros2_control nodes
-ros2 launch robot_moveit robot_controls.launch.py
+ros2 launch xcub_moveit_robot robot_controls.launch.py
 ```
 
 To verify that everthing has been done successfully, you can run in a separate shell:
@@ -208,16 +213,16 @@ cd ~/<ros2_ws>
 source /opt/ros/humble/setup.bash 
 colcon build
 source install/setup.bash
-export YARP_ROBOT_NAME="icub"
+export YARP_ROBOT_NAME="iCubGazeboV2_5"
 
 # For the grasping demo
-ros2 launch robot_moveit grasp_demo.launch.py
+ros2 launch xcub_moveit_robot grasp_demo.launch.py
 ```
 
 If you want to see iCub performing a circle movement, instead of the last line, you can run:
 
 ```shell
-ros2 launch robot_moveit circle_demo.launch.py
+ros2 launch xcub_moveit_robot circle_demo.launch.py
 ```
 
 and follow the instructions on the third shell you opened.
@@ -228,10 +233,10 @@ You should have something like this:
 
 ### Controller performance
 
-If you want to test the ros2_control `robot_controller` performance, you can rely to the `test_controller` package. It contains a simple script to sample the reaching space in front of iCub model. To run the simulation, please follow the first two steps described in the [Run the demos](#run-the-demos) section. After that, open another shell, source your workspace and then launch:
+If you want to test the ros2_control `xcub_ros2_controllers` performance, you can rely to the `xcub_moveit_test_controller` package. It contains a simple script to sample the reaching space in front of iCub model. To run the simulation, please follow the first two steps described in the [Run the demos](#run-the-demos) section. After that, open another shell, source your workspace and then launch:
 
 ```shell
-ros2 launch test_controller test_controller.launch.py
+ros2 launch xcub_moveit_test_controller test_controller.launch.py
 ```
 
 In this way, the test will start and the acquired data in terms of ideal and real poses are saved in two separated files in your current directory. Finally, you can plot them using the Matlab scripts provided in the `utils` folder.

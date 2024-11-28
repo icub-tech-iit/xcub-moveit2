@@ -5,6 +5,7 @@ from moveit_configs_utils import MoveItConfigsBuilder
 from launch.actions import RegisterEventHandler
 from launch.event_handlers import OnProcessExit
 from ament_index_python.packages import get_package_share_directory
+from launch.substitutions import PathJoinSubstitution
 
 def check_robot_name():
     try:
@@ -27,62 +28,64 @@ def generate_launch_description():
         "config",
         "ros2_controllers.yaml",
     )
-    
+
     ros2_control_node = Node(
         package="controller_manager",
         executable="ros2_control_node",
-        parameters=[moveit_config.robot_description, ros2_controllers_path,
-                    {"use_sim_time": False}],
-        output="log",
+        parameters=[ros2_controllers_path],
+        output="both",
+        remappings=[
+            ("~/robot_description", "/robot_description"),
+        ],
     )
 
     right_arm_torso_controller_spawner = Node(
         package="controller_manager",
         executable="spawner",
         arguments=["right_arm_torso_controller", "-c", "/controller_manager"],
-        parameters=[{"use_sim_time": False}],
+        parameters=[{"use_sim_time": True}],
     )
 
     left_arm_controller_spawner = Node(
         package="controller_manager",
         executable="spawner",
         arguments=["left_arm_controller", "-c", "/controller_manager"],
-        parameters=[{"use_sim_time": False}],
+        parameters=[{"use_sim_time": True}],
     )
 
     right_arm_controller_spawner = Node(
         package="controller_manager",
         executable="spawner",
         arguments=["right_arm_controller", "-c", "/controller_manager", "--inactive"],
-        parameters=[{"use_sim_time": False}],
+        parameters=[{"use_sim_time": True}],
     )
 
     left_leg_controller_spawner = Node(
         package="controller_manager",
         executable="spawner",
         arguments=["left_leg_controller", "-c", "/controller_manager"],
-        parameters=[{"use_sim_time": False}],
+        parameters=[{"use_sim_time": True}],
     )
 
     right_leg_controller_spawner = Node(
         package="controller_manager",
         executable="spawner",
         arguments=["right_leg_controller", "-c", "/controller_manager"],
-        parameters=[{"use_sim_time": False}],
+        parameters=[{"use_sim_time": True}],
     )
 
     head_controller_spawner = Node(
         package="controller_manager",
         executable="spawner",
         arguments=["head_controller", "-c", "/controller_manager"],
-        parameters=[{"use_sim_time": False}],
+        parameters=[{"use_sim_time": True}],
     )
 
     torso_controller_spawner = Node(
         package="controller_manager",
         executable="spawner",
         arguments=["torso_controller", "-c", "/controller_manager", "--inactive"],
-        parameters=[{"use_sim_time": False}],
+        parameters=[{"use_sim_time": True}],
     )
 
     return LaunchDescription([

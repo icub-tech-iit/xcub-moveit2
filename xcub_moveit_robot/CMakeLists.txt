@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(robot_moveit)
+project(xcub_moveit_robot)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -18,13 +18,13 @@ find_package(hardware_interface REQUIRED)
 find_package(yarp_control_msgs REQUIRED)
 find_package(YARP REQUIRED)
 
-add_executable(robot_moveit src/robot_moveit.cpp launch/spawn_model.py)
-target_include_directories(robot_moveit PUBLIC
+add_executable(xcub_moveit_robot src/robot_moveit.cpp launch/spawn_model.py)
+target_include_directories(xcub_moveit_robot PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
-target_compile_features(robot_moveit PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+target_compile_features(xcub_moveit_robot PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 ament_target_dependencies(
-  robot_moveit
+  xcub_moveit_robot
   "moveit_ros_planning_interface"
   "rclcpp"
   "rclpy"
@@ -38,7 +38,7 @@ ament_target_dependencies(
 target_sources(${PROJECT_NAME} PRIVATE src/robot_moveit.cpp)
 target_link_libraries(${PROJECT_NAME} ${YARP_LIBRARIES})
 
-install(TARGETS robot_moveit DESTINATION lib/${PROJECT_NAME})
+install(TARGETS xcub_moveit_robot DESTINATION lib/${PROJECT_NAME})
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
 install(PROGRAMS launch/spawn_model.py DESTINATION lib/${PROJECT_NAME})
 
