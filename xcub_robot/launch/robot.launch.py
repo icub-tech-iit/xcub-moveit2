@@ -38,7 +38,7 @@ def generate_launch_description():
     robot_name = check_robot_name()
 
     moveit_config = (
-        MoveItConfigsBuilder(robot_name)
+        MoveItConfigsBuilder("xcub_"+robot_name)
         .robot_description(file_path="config/"+robot_name+".urdf.xacro")
         .robot_description_semantic(file_path="config/"+robot_name+".srdf")
         .robot_description_kinematics(file_path="config/kinematics.yaml")
