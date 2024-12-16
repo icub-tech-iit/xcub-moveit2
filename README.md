@@ -13,7 +13,7 @@ xcub-moveit2
 
 ## Overview
 
-This repository contains the current state of the ROS2 packages for using iCub and ergoCub with MoveIt.
+This repository contains the current state of the ROS 2 packages for using iCub and ergoCub with MoveIt.
 
 ## Assumptions
 
@@ -23,30 +23,13 @@ These packages were generated and tested with `ros humble` distro on a `Ubuntu 2
 
 First of all, install [ROS 2 Humble](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html) on your machine and configure your [ROS 2 environment](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#configuring-environment). Then, follow the [MoveIt 2 install guide](https://moveit.ros.org/install-moveit2/binary/) to build all the necessary dependencies.
 
-Moreover, it is mandatory to install `yarp-devices-ros2` on your machine to use custom ROS messages and services defined in [yarp_control_msgs](https://github.com/robotology/yarp-devices-ros2/tree/master/ros2_interfaces_ws/src/yarp_control_msgs):
+Moreover, it is mandatory to install `yarp-devices-ros2` on your machine to use custom ROS messages and services defined in [yarp_control_msgs](https://github.com/robotology/yarp-devices-ros2/tree/master/ros2_interfaces_ws/src/yarp_control_msgs). To do this, you can follow the [installation procedure](https://github.com/robotology/yarp-devices-ros2?tab=readme-ov-file#installation) described in the repository. Otherwise, starting from the distro [`v2024.11.0`](../sw_versioning_table/2024.11.0.md), it can be compiled within the robotology-superbuild by enabling the `ROBOTOLOGY_USES_ROS2` CMake option .
 
-```shell
-# Clone the repository in your workspace
-git clone https://github.com/robotology/yarp-devices-ros2
-
-# Build ROS msgs and compile the colcon workspace
-cd yarp-devices-ros2/ros2_interfaces_ws
-colcon build
-source install/setup.bash
-
-# Compile yarp-devices-ros2 specifying the installation path
-cd ..
-mkdir build && cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=<install_prefix>
-make
-make install
-```
-
-This repository contains some devices and custom ROS2 interfaces with different purposes and, in particular for this application, it contains the possibility to control a `yarp-based` robot with ROS2. To enable this features, you have to add the `msgs_name` parameter in your configuration file that inizializes the device `controlBoard_nws_ros2`, for example:
+This repository contains some devices and custom ROS 2 interfaces with different purposes and, in particular for this application, it contains the possibility to control a `yarp-based` robot with ROS 2. To enable this features, you have to add the `msgs_name` parameter in your configuration file that inizializes the device `controlBoard_nws_ros2`, for example:
 
 ![msgs](assets/msgs_parameter.jpg)
 
-Finally, [TRAC-IK](https://traclabs.com/projects/trac-ik/) is chosen as inverse kinematics solver. It is more accurate and faster when dealing with complex kinematic chains with respect to KDL Kinematics, which represents the standard for MoveIt 2. To install it inside your ROS2 workspace:
+Finally, [TRAC-IK](https://traclabs.com/projects/trac-ik/) is chosen as inverse kinematics solver. It is more accurate and faster when dealing with complex kinematic chains with respect to KDL Kinematics, which represents the standard for MoveIt 2. To install it inside your ROS 2 workspace:
 
 ```shell
 cd ~/<ros2_ws>/src
@@ -70,7 +53,7 @@ To install the project from source, please follow **only one** of the following 
 
 ### Install with colcon
 
-In your ROS2 workspace, clone the repo:
+In your ROS 2 workspace, clone the repo:
 
 ```shell
 cd ~/<ros2_ws>/src
