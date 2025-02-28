@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>xcub_moveit_robot</name>
-  <version>0.2.0</version>
+  <version>0.3.1</version>
   <description>TODO: Package description</description>
   <maintainer email="martina.gloria@iit.it">martinagloria</maintainer>
   <license>TODO: License declaration</license>
