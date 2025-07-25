@@ -1,0 +1,46 @@
+name: Bump ROS2 Package Version
+
+on:
+  workflow_dispatch:
+    inputs:
+      version_type:
+        description: 'Version bump type (major, minor, patch)'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - major
+          - minor
+          - patch
+
+jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Conda Environment
+        uses: mamba-org/setup-micromamba@v1
+        with:
+          environment-file: ci_env.yml
+
+      - name: Install dependencies
+        shell: bash -l {0}
+        run: |
+          micromamba activate ros2_env
+          micromamba install -c conda-forge catkin_pkg
+      
+      - name: Check version
+        shell: bash -l {0}
+        run: |
+          micromamba activate ros2_env
+          catkin_package_version
+          echo ${{ github.event.inputs.version_type }}
+        
+      - name: Bump version
+        shell: bash -l {0}
+        run: |
+          micromamba activate ros2_env
+          catkin_package_version --bump ${{ github.event.inputs.version_type }}

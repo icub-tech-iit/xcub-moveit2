@@ -1,0 +1,5 @@
+name: ros2_env
+channels:
+  - conda-forge
+dependencies:
+  - catkin_pkg 
