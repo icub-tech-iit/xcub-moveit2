@@ -118,7 +118,7 @@ This package contains `xcub_ros2_controllers` plugin that is used in [ros2_contr
 
 This package contains some launch files, depending on the nodes you want to run.
 
-- **`robot.launch.py`**: it allows to start up a set of nodes to bringup the robot. It spawns the model on `rviz`, publishes the state of the robot to `tf2` topic and starts the [move_group](https://moveit.picknik.ai/main/doc/concepts/move_group.html) node, which provides some ROS actions and services for using MoveIt 2 with your robot.
+- **`robot.launch.py`**: it allows to start up a set of nodes to bring up the robot. It spawns the model on `rviz`, publishes the state of the robot to `tf2` topic and starts the [move_group](https://moveit.picknik.ai/main/doc/concepts/move_group.html) node, which provides some ROS actions and services for using MoveIt 2 with your robot.
 - **`robot_sim.launch.py`**: it's the same as before, but it spawns the model also in `gazebo` environment to work with the simulated robot.
 - **`robot_controls.launch.py`**: this launch file allows to run the `controller manager` node for ros2_control and the nodes for the single controllers (one for each part).
 - **`circle_demo.launch.py`** and **`grasp_demo.launch.py`**: as the name suggests, they are two examples of commanding the robot in the cartesian space using `torso + right_arm` as planning group.
