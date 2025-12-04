@@ -25,7 +25,7 @@ First of all, install [ROS 2 Humble](https://docs.ros.org/en/humble/Installation
 
 Moreover, it is mandatory to install `yarp-devices-ros2` on your machine to use custom ROS messages and services defined in [yarp_control_msgs](https://github.com/robotology/yarp-devices-ros2/tree/master/ros2_interfaces_ws/src/yarp_control_msgs). To do this, you can follow the [installation procedure](https://github.com/robotology/yarp-devices-ros2?tab=readme-ov-file#installation) described in the repository. Otherwise, starting from the distro [`v2024.11.0`](../sw_versioning_table/2024.11.0.md), it can be compiled within the robotology-superbuild by enabling the `ROBOTOLOGY_USES_ROS2` CMake option .
 
-This repository contains some devices and custom ROS 2 interfaces with different purposes and, in particular for this application, it contains the possibility to control a `yarp-based` robot with ROS 2. To enable this features, you have to add the `msgs_name` parameter in your configuration file that inizializes the device `controlBoard_nws_ros2`, for example:
+This repository contains some devices and custom ROS 2 interfaces with different purposes and, in particular for this application, it contains the possibility to control a `yarp-based` robot with ROS 2. To enable this feature, you have to add the `msgs_name` parameter in your configuration file that inizializes the device `controlBoard_nws_ros2`, for example:
 
 ![msgs](assets/msgs_parameter.jpg)
 
