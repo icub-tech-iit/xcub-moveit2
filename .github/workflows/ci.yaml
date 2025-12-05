@@ -25,16 +25,13 @@ jobs:
           push: false
 
       - name: Build ros2 packages
-        uses: addnab/docker-run-action@v3
-        with:
-          image: xcub-moveit2:latest
-          options: -v ${{github.workspace}}/:/ros2_ws/
-          run: |
-              cd ros2_ws
+        run: |
+          docker run \
+            --rm \
+            -v ${{ github.workspace }}:/ros2_ws \
+            xcub-moveit2:latest \
+            bash -c "
+              cd /ros2_ws
               . /opt/ros/humble/setup.sh
-              if colcon build; then 
-                . install/setup.sh
-              else
-                echo "Compilation failed"
-                exit 1
-              fi
+              colcon build || exit 1
+            "
