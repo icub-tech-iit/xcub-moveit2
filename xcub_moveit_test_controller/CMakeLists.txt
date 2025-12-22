@@ -10,8 +10,9 @@ find_package(ament_cmake REQUIRED)
 find_package(moveit_ros_planning_interface REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclpy REQUIRED)
-find_package(gazebo_msgs REQUIRED)
+find_package(ros_gz_interfaces REQUIRED)
 find_package(moveit_visual_tools REQUIRED)
+find_package(moveit_ros_visualization REQUIRED)
 find_package(controller_manager REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
 find_package(hardware_interface REQUIRED)
@@ -33,6 +34,7 @@ ament_target_dependencies(
   "yarp_control_msgs"
   "rclcpp_lifecycle"
   "hardware_interface"
+  "moveit_ros_visualization"
 )
 
 target_sources(xcub_moveit_test_controller PRIVATE src/test_controller.cpp)

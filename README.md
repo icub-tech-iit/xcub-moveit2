@@ -17,35 +17,59 @@ This repository contains the current state of the ROS 2 packages for using iCub 
 
 ## Assumptions
 
-These packages were generated and tested with `ros humble` distro on a `Ubuntu 22.04` machine.
+These packages were generated and tested with `ROS 2 Jazzy Jalisco` distro on a `Ubuntu 24.04` machine.
 
 ## Prerequisites and dependencies
 
-First of all, install [ROS 2 Humble](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html) on your machine and configure your [ROS 2 environment](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#configuring-environment). Then, follow the [MoveIt 2 install guide](https://moveit.ros.org/install-moveit2/binary/) to build all the necessary dependencies.
+### MoveIt
 
-Moreover, it is mandatory to install `yarp-devices-ros2` on your machine to use custom ROS messages and services defined in [yarp_control_msgs](https://github.com/robotology/yarp-devices-ros2/tree/master/ros2_interfaces_ws/src/yarp_control_msgs). To do this, you can follow the [installation procedure](https://github.com/robotology/yarp-devices-ros2?tab=readme-ov-file#installation) described in the repository. Otherwise, starting from the distro [`v2024.11.0`](../sw_versioning_table/2024.11.0.md), it can be compiled within the robotology-superbuild by enabling the `ROBOTOLOGY_USES_ROS2` CMake option .
+First of all, install [ROS 2 Jazzy](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debians.html) on your machine and configure your [ROS 2 environment](https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#configuring-environment). Then, follow the [MoveIt 2 install guide](https://moveit.ros.org/install-moveit2/binary/) to build all the necessary dependencies.
+
+### yarp-devices-ros2
+
+Moreover, it is mandatory to install `yarp-devices-ros2` on your machine to use custom ROS messages and services defined in [yarp_control_msgs](https://github.com/robotology/yarp-devices-ros2/tree/master/ros2_interfaces_ws/src/yarp_control_msgs). To do this, you can follow the [installation procedure](https://github.com/robotology/yarp-devices-ros2?tab=readme-ov-file#installation) described in the repository. Otherwise, starting from the distro [`v2024.11.0`](../sw_versioning_table/2024.11.0.md), it can be compiled within the robotology-superbuild by enabling the `ROBOTOLOGY_USES_ROS2` CMake option.
 
 This repository contains some devices and custom ROS 2 interfaces with different purposes and, in particular for this application, it contains the possibility to control a `yarp-based` robot with ROS 2. To enable this feature, you have to add the `msgs_name` parameter in your configuration file that inizializes the device `controlBoard_nws_ros2`, for example:
 
 ![msgs](assets/msgs_parameter.jpg)
 
-Finally, [TRAC-IK](https://traclabs.com/projects/trac-ik/) is chosen as inverse kinematics solver. It is more accurate and faster when dealing with complex kinematic chains with respect to KDL Kinematics, which represents the standard for MoveIt 2. To install it inside your ROS 2 workspace:
+### TRAC-IK
+
+[TRAC-IK](https://traclabs.com/projects/trac-ik/) is chosen as inverse kinematics solver. It is more accurate and faster when dealing with complex kinematic chains with respect to KDL Kinematics, which represents the standard for MoveIt 2. 
+
+It's possibile to install it using deb packages:
+
+```shell
+sudo apt update
+sudo apt install ros-jazzy-trac-ik
+```
+
+Instead, if you want to install `xcub-moveit2` as a standalone project (not relying on the robotology-superbuild), it can be installed within your ROS 2 workspace:
 
 ```shell
 cd ~/<ros2_ws>/src
-source /opt/ros/humble/setup.bash
+source /opt/ros/jazzy/setup.bash
 
 # Clone the repository inside your ros2 workspace and build it
-git clone https://bitbucket.org/traclabs/trac_ik.git -b rolling-devel
+git clone https://bitbucket.org/traclabs/trac_ik.git -b jazzy
 cd trac_ik
 colcon build
 source install/setup.bash
 ```
 
-> **_NOTE:_** If you don't want to source your ros humble setup file each time a new shell is open, you can add this command in your `.bashrc`:
+> **_NOTE:_** If you don't want to source your ros jazzy setup file each time a new shell is open, you can add this command in your `.bashrc`:
 > ```shell
-> echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+> echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
 > ```
+
+### Further ros2 packages
+
+Finally, install the following further ros2 packages since the project depends on them:
+
+```shell
+sudo apt update
+sudo apt install ros-jazzy-ros-gz-interfaces ros-jazzy-hardware-interface ros-jazzy-controller-manager ros-jazzy-moveit-visual-tools ros-jazzy-moveit-ros-planning-interface ros-jazzy-ros-gz-sim
+```
 
 ## Install
 
@@ -64,10 +88,14 @@ and then build the environment:
 
 ```shell
 cd ..
-source /opt/ros/humble/setup.bash 
+source /opt/ros/jazzy/setup.bash 
 colcon build
 source install/setup.bash
 ```
+
+### Install within the robotology-superbuild
+
+You may want to install `xcub-moveit2` via the robotology-superbuild. To get its when using the robotology-superbuild, please enable the `ROBOTOLOGY_USES_MOVEIT` CMake option of the superbuild.
 
 ### Install as a single CMake project
 
@@ -108,7 +136,7 @@ This section aims to give a brief description of what each package contains.
 
 ### xcub_ros2_controllers
 
-This package contains `xcub_ros2_controllers` plugin that is used in [ros2_control](https://control.ros.org/master/index.html) framework. It includes:
+This package contains `xcub_ros2_controllers` plugin that is used in [ros2_control](https://control.ros.org/jazzy/index.html) framework. It includes:
 
 - a `position state interface` used to read the position of each joint;
 - a `velocity state interface` used to read the velocity of each joint;
@@ -158,7 +186,7 @@ As described in the previous section, this repository contains two demos that sh
 ```shell
 # Build the packages within your ros2 workspace
 cd ~/<ros2_ws>
-source /opt/ros/humble/setup.bash 
+source /opt/ros/jazzy/setup.bash 
 colcon build
 source install/setup.bash
 
@@ -173,7 +201,7 @@ In this way, both rviz2 and gazebo windows are opened with the iCub model spawne
 
 ```shell
 cd ~/<ros2_ws>
-source /opt/ros/humble/setup.bash 
+source /opt/ros/jazzy/setup.bash 
 colcon build
 source install/setup.bash
 export YARP_ROBOT_NAME="iCubGazeboV2_5"
@@ -193,7 +221,7 @@ Finally, open another shell and run the chosen demo, for example:
 
 ```shell
 cd ~/<ros2_ws>
-source /opt/ros/humble/setup.bash 
+source /opt/ros/jazzy/setup.bash 
 colcon build
 source install/setup.bash
 export YARP_ROBOT_NAME="iCubGazeboV2_5"
