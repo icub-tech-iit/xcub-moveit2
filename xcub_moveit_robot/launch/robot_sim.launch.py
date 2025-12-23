@@ -40,7 +40,7 @@ def generate_launch_description():
     robot_name = check_robot_name()
 
     gazebo = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([os.path.join(get_package_share_directory('gazebo_ros'), 'launch'), '/gazebo.launch.py'])
+        PythonLaunchDescriptionSource([os.path.join(get_package_share_directory('ros_gz_sim'), 'launch'), '/gz_sim.launch.py'])
     )
 
     config = (
@@ -54,10 +54,13 @@ def generate_launch_description():
     )
 
     model_spawner = Node(
-        package='xcub_moveit_robot', 
-        executable='spawn_model.py', 
-        name='spawn_entity', 
-        output='screen', 
+        package='ros_gz_sim',
+        executable='create',
+        arguments=[
+            '-world', 'default',
+            '-file', os.path.join(get_package_share_directory(robot_name+'_moveit_config'), 'config', 'model.urdf'),
+        ],
+        output='screen'
     )
 
     robot_state_publisher = Node(
