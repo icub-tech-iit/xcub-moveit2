@@ -40,38 +40,18 @@ def generate_launch_description():
     robot_name = check_robot_name()
 
     gazebo = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([os.path.join(get_package_share_directory('ros_gz_sim'), 'launch'), '/gz_sim.launch.py'])
+        PythonLaunchDescriptionSource([os.path.join(get_package_share_directory('ros_gz_sim'), 'launch'), '/gz_sim.launch.py']),
+        launch_arguments={'gz_args': os.path.join(get_package_share_directory(robot_name+'_moveit_config'), 'config', robot_name + '_world.sdf')}.items(),
     )
 
     config = (
         MoveItConfigsBuilder(robot_name)
-        .robot_description(file_path="config/"+robot_name+".urdf.xacro")
-        .robot_description_semantic(file_path="config/"+robot_name+".srdf")
+        .robot_description(file_path=f"config/{robot_name}.urdf.xacro")
+        .robot_description_semantic(file_path=f"config/{robot_name}.srdf")
         .robot_description_kinematics(file_path="config/kinematics.yaml")
         .planning_pipelines(pipelines=["ompl", "chomp", "pilz_industrial_motion_planner"]
         )
         .to_moveit_configs()
-    )
-
-    # model_spawner = Node(
-    #     package='xcub_moveit_robot', 
-    #     executable='spawn_model.py', 
-    #     name='spawn_entity', 
-    #     output='screen', 
-    # )
-    print("Spawning model for robot: {}".format(robot_name))
-    model_spawner = Node(
-        package='ros_gz_sim',
-        executable='create',
-    #     # name='spawn_entity',
-        arguments=[
-            '-world', 'default',
-            '-file', os.path.join(get_package_share_directory(robot_name+'_moveit_config'), 'config', 'model.urdf'),
-    #     #     # '-file', os.path.join(get_package_share_directory(robot_name+'_moveit_config'), 'config', robot_name+'.urdf.xacro')
-    #     #     '--name', robot_name,
-    #     #     '--sdf_filename', os.path.join(get_package_share_directory(robot_name+'_moveit_config'), 'config', 'world.sdf'),
-        ],
-        output='screen'
     )
 
     robot_state_publisher = Node(
@@ -86,6 +66,7 @@ def generate_launch_description():
     robot_description_semantic_file = load_file(robot_name+"_moveit_config", "config/"+robot_name+".srdf")
     robot_description_semantic = {"robot_description_semantic": robot_description_semantic_file}
 
+    # Load OMPL planning configuration
     ompl_planning_pipeline_config = {
         "move_group": {
             "planning_plugin": "ompl_interface/OMPLPlanner",
@@ -151,7 +132,6 @@ def generate_launch_description():
 
     return LaunchDescription([
             gazebo,
-            model_spawner,
             robot_state_publisher,
             rviz2,
             move_group_node
