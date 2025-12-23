@@ -53,23 +53,12 @@ def generate_launch_description():
         .to_moveit_configs()
     )
 
-    # model_spawner = Node(
-    #     package='xcub_moveit_robot', 
-    #     executable='spawn_model.py', 
-    #     name='spawn_entity', 
-    #     output='screen', 
-    # )
-    print("Spawning model for robot: {}".format(robot_name))
     model_spawner = Node(
         package='ros_gz_sim',
         executable='create',
-    #     # name='spawn_entity',
         arguments=[
             '-world', 'default',
             '-file', os.path.join(get_package_share_directory(robot_name+'_moveit_config'), 'config', 'model.urdf'),
-    #     #     # '-file', os.path.join(get_package_share_directory(robot_name+'_moveit_config'), 'config', robot_name+'.urdf.xacro')
-    #     #     '--name', robot_name,
-    #     #     '--sdf_filename', os.path.join(get_package_share_directory(robot_name+'_moveit_config'), 'config', 'world.sdf'),
         ],
         output='screen'
     )
