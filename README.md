@@ -197,6 +197,10 @@ export YARP_ROBOT_NAME="iCubGazeboV2_5"
 ros2 launch xcub_moveit_robot robot_sim.launch.py
 ```
 
+> [!IMPORTANT]  
+> Check that the YARP_ROBOT_NAME value matches the name of the model you include at the end of the [`icub_world.sdf`](https://github.com/icub-tech-iit/xcub-moveit2/blob/master/icub_moveit_config/config/icub_world.sdf) or [`ergocub_world.sdf`](https://github.com/icub-tech-iit/xcub-moveit2/blob/master/ergocub_moveit_config/config/ergocub_world.sdf).
+
+
 In this way, both rviz2 and gz-sim windows are opened with the iCub model spawned in the two environments. At this point, open another shell, build and source the enviroment and then launch the ros2_control nodes:
 
 ```shell
