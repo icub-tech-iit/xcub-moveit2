@@ -2,7 +2,7 @@
 import os
 import rclpy
 import xacro
-from gazebo_msgs.srv import SpawnEntity
+from ros_gz_interfaces.srv import SpawnEntity
 from ament_index_python.packages import get_package_share_directory
 
 
@@ -12,6 +12,7 @@ def main(args=None):
     cli = node.create_client(SpawnEntity, '/spawn_entity')
 
     robot_name = os.environ["YARP_ROBOT_NAME"]
+    print(f"Spawning model for robot: {robot_name}")
 
     xacro_file = os.path.join(get_package_share_directory(robot_name+'_moveit_config'), 'config', robot_name+'.urdf.xacro')
     assert os.path.exists(xacro_file)
